@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package protos;
+
+option go_package="./protos";
+
+import "google/protobuf/timestamp.proto";
+
+message FrameData {
+    bytes data = 1;
+    MetaData metaData = 2; 
+}
+
+message MetaData {
+   google.protobuf.Timestamp timestamp = 1;
+   int64 frame_number  = 2; 
+}
+

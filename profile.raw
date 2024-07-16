@@ -1,0 +1,338 @@
+PeriodType: cpu nanoseconds
+Period: 10000000
+Time: 2024-07-15 05:17:35.569600329 -0400 EDT
+Duration: 2m0.
+Samples:
+samples/count cpu/nanoseconds
+          6   60000000: 1 2 3 4 5 6 7 8 
+          1   10000000: 9 10 11 12 13 14 15 16 17 18 
+          1   10000000: 19 20 21 
+          1   10000000: 22 23 24 25 26 27 28 
+          1   10000000: 29 30 31 32 33 34 35 36 37 38 24 25 26 27 28 
+          1   10000000: 39 40 41 42 43 44 45 
+          1   10000000: 46 47 48 49 50 51 52 
+          1   10000000: 53 54 55 5 6 56 8 
+          1   10000000: 57 58 45 
+          1   10000000: 59 60 61 45 
+          1   10000000: 62 63 6 56 8 
+          1   10000000: 64 65 66 67 68 69 70 71 
+          1   10000000: 72 73 74 75 76 77 78 
+          3   30000000: 64 65 66 67 68 69 70 79 
+          1   10000000: 80 81 82 83 84 85 
+          1   10000000: 86 70 85 
+          1   10000000: 87 49 50 51 52 
+          1   10000000: 88 3 4 5 6 7 8 
+          1   10000000: 89 90 91 92 93 33 94 
+          1   10000000: 95 90 96 97 98 99 33 100 101 102 103 104 105 61 45 
+          1   10000000: 106 107 
+          1   10000000: 108 109 93 33 94 
+          1   10000000: 110 111 112 23 24 25 26 27 28 
+          1   10000000: 39 113 114 50 105 61 45 
+          2   20000000: 1 115 116 117 30 31 32 33 34 35 36 37 38 24 25 26 27 28 
+          3   30000000: 39 118 119 120 43 44 45 
+          1   10000000: 1 115 116 117 30 121 122 56 8 
+          4   40000000: 39 76 77 78 
+          4   40000000: 1 2 3 4 5 6 56 8 
+          1   10000000: 64 65 66 123 124 112 23 24 25 26 27 28 
+          1   10000000: 125 121 122 7 8 
+          6   60000000: 39 113 114 50 51 52 
+          1   10000000: 126 127 36 128 61 45 
+          1   10000000: 129 124 112 23 24 25 26 27 28 
+          1   10000000: 130 131 6 7 8 
+          1   10000000: 132 133 134 49 50 51 52 
+          1   10000000: 135 45 
+          1   10000000: 136 137 138 
+          1   10000000: 64 65 66 67 68 139 140 141 142 143 144 145 146 147 142 143 148 149 150 151 151 151 152 153 154 155 156 157 158 159 160 161 162 163 164 
+          1   10000000: 1 115 116 165 166 33 167 74 75 113 114 50 105 61 45 
+          3   30000000: 64 65 66 67 68 69 70 168 45 
+          1   10000000: 169 170 30 121 122 56 8 
+          1   10000000: 171 172 173 85 
+          1   10000000: 174 4 5 6 7 8 
+          3   30000000: 64 65 66 67 68 69 70 85 
+          1   10000000: 175 112 23 24 25 26 27 28 
+          1   10000000: 1 115 116 117 30 31 176 33 177 178 61 45 
+          1   10000000: 179 180 61 45 
+          1   10000000: 181 182 183 184 33 185 186 61 45 
+          1   10000000: 187 188 189 190 105 61 45 
+          1   10000000: 191 192 193 6 7 8 
+          1   10000000: 194 70 79 
+          1   10000000: 195 196 
+          1   10000000: 1 115 116 117 30 197 33 185 186 61 45 
+          1   10000000: 198 137 199 
+          1   10000000: 200 201 202 203 204 
+          1   10000000: 64 205 206 207 6 56 8 
+          1   10000000: 208 30 121 122 7 8 
+          1   10000000: 209 193 6 7 8 
+          1   10000000: 210 193 6 7 8 
+          1   10000000: 211 212 213 214 215 45 
+          1   10000000: 216 217 36 128 61 45 
+          1   10000000: 218 31 176 33 177 178 61 45 
+          1   10000000: 59 219 43 44 45 
+          1   10000000: 64 205 206 207 6 7 8 
+          1   10000000: 220 190 105 61 45 
+Locations
+     1: 0x47c343 M=1 runtime.futex /usr/local/go/src/runtime/sys_linux_amd64.s:558 s=549
+     2: 0x43c72f M=1 runtime.futexsleep /usr/local/go/src/runtime/os_linux.go:69 s=62
+     3: 0x413106 M=1 runtime.notesleep /usr/local/go/src/runtime/lock_futex.go:170 s=158
+     4: 0x4473cb M=1 runtime.mPark /usr/local/go/src/runtime/proc.go:1761 s=1759
+             runtime.stopm /usr/local/go/src/runtime/proc.go:2782 s=2766
+     5: 0x448f3e M=1 runtime.findRunnable /usr/local/go/src/runtime/proc.go:3512 s=3139
+     6: 0x44a010 M=1 runtime.schedule /usr/local/go/src/runtime/proc.go:3868 s=3839
+     7: 0x44a5eb M=1 runtime.park_m /usr/local/go/src/runtime/proc.go:4036 s=4007
+     8: 0x47850d M=1 runtime.mcall /usr/local/go/src/runtime/asm_amd64.s:458 s=428
+     9: 0x47bf9a M=1 runtime.rtsigprocmask /usr/local/go/src/runtime/sys_linux_amd64.s:295 s=288
+    10: 0x47593d M=1 runtime.sigprocmask /usr/local/go/src/runtime/os_linux.go:434 s=433
+             runtime.msigrestore /usr/local/go/src/runtime/signal_unix.go:1195 s=1194
+             syscall.runtime_AfterFork /usr/local/go/src/runtime/proc.go:4790 s=4784
+    11: 0x485a6c M=1 syscall.forkAndExecInChild /usr/local/go/src/syscall/exec_linux.go:138 s=133
+    12: 0x487deb M=1 syscall.forkExec /usr/local/go/src/syscall/exec_unix.go:208 s=143
+    13: 0x4defb1 M=1 syscall.StartProcess /usr/local/go/src/syscall/exec_unix.go:254 s=253
+             os.startProcess /usr/local/go/src/os/exec_posix.go:54 s=26
+    14: 0x4debd3 M=1 os.StartProcess /usr/local/go/src/os/exec.go:111 s=109
+    15: 0x8258d0 M=1 os/exec.(*Cmd).Start /usr/local/go/src/os/exec/exec.go:700 s=616
+    16: 0x825297 M=1 os/exec.(*Cmd).Run /usr/local/go/src/os/exec/exec.go:604 s=603
+    17: 0x922ff9 M=1 github.com/u2takey/ffmpeg-go.(*Stream).Run /home/dbarun/go/pkg/mod/github.com/u2takey/ffmpeg-go@v0.5.0/run.go:288 s=277
+    18: 0x9ea4f9 M=1 video_server/stream.(*stream).HandleRTSPStream /home/dbarun/CDPG/video_server/stream/stream.go:99 s=79
+    19: 0x41475e M=1 runtime.nextFreeFast /usr/local/go/src/runtime/malloc.go:912 s=911
+             runtime.mallocgc /usr/local/go/src/runtime/malloc.go:1147 s=971
+    20: 0x412064 M=1 runtime.convTstring /usr/local/go/src/runtime/iface.go:392 s=388
+    21: 0x9e96c8 M=1 video_server/kafka_client.(*kafkaClient).msgReportHandler.func1 /home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:71 s=63
+    22: 0x4dfa92 M=1 os.(*File).read /usr/local/go/src/os/file_posix.go:29 s=28
+             os.(*File).Read /usr/local/go/src/os/file.go:118 s=114
+    23: 0x4d4590 M=1 io.copyBuffer /usr/local/go/src/io/io.go:429 s=407
+    24: 0x4e01d7 M=1 io.Copy /usr/local/go/src/io/io.go:388 s=387
+             os.genericWriteTo /usr/local/go/src/os/file.go:269 s=268
+    25: 0x4e00fb M=1 os.(*File).WriteTo /usr/local/go/src/os/file.go:247 s=239
+    26: 0x4d449c M=1 io.copyBuffer /usr/local/go/src/io/io.go:411 s=407
+    27: 0x825233 M=1 io.Copy /usr/local/go/src/io/io.go:388 s=387
+             os/exec.(*Cmd).writerDescriptor.func1 /usr/local/go/src/os/exec/exec.go:577 s=576
+    28: 0x825ecb M=1 os/exec.(*Cmd).Start.func2 /usr/local/go/src/os/exec/exec.go:724 s=723
+    29: 0x447572 M=1 runtime.startm /usr/local/go/src/runtime/proc.go:2886 s=2809
+    30: 0x447bab M=1 runtime.wakep /usr/local/go/src/runtime/proc.go:3006 s=2975
+    31: 0x4442e4 M=1 runtime.ready /usr/local/go/src/runtime/proc.go:970 s=952
+    32: 0x40cd44 M=1 runtime.send.goready.func1 /usr/local/go/src/runtime/proc.go:413 s=412
+    33: 0x478589 M=1 runtime.systemstack /usr/local/go/src/runtime/asm_amd64.s:509 s=478
+    34: 0x40ccb2 M=1 runtime.goready /usr/local/go/src/runtime/proc.go:412 s=411
+             runtime.send /usr/local/go/src/runtime/chan.go:322 s=294
+    35: 0x40cab9 M=1 runtime.chansend /usr/local/go/src/runtime/chan.go:212 s=160
+    36: 0x40c5b6 M=1 runtime.chansend1 /usr/local/go/src/runtime/chan.go:145 s=144
+    37: 0x9ea0e9 M=1 video_server/stream.(*chanWriter).Write /home/dbarun/CDPG/video_server/stream/stream.go:38 s=37
+    38: 0x4d45dd M=1 io.copyBuffer /usr/local/go/src/io/io.go:431 s=407
+    39: 0x40b0aa M=1 runtime.cgocall /usr/local/go/src/runtime/cgocall.go:157 s=124
+    40: 0x949a67 M=1 github.com/confluentinc/confluent-kafka-go/v2/kafka._cgo_cmalloc _cgo_gotypes.go:5224 s=5223
+    41: 0x946044 M=1 github.com/confluentinc/confluent-kafka-go/v2/kafka._Cfunc_CString _cgo_gotypes.go:769 s=765
+    42: 0x954ce4 M=1 github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).produce /home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:259 s=175
+    43: 0x955344 M=1 github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Produce /home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:313 s=308
+    44: 0x9e9e24 M=1 video_server/kafka_client.(*kafkaClient).Publish /home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:121 s=106
+    45: 0x9ea261 M=1 video_server/stream.(*stream).listenFrame /home/dbarun/CDPG/video_server/stream/stream.go:49 s=44
+    46: 0x42f6c4 M=1 runtime.(*mspan).base /usr/local/go/src/runtime/mheap.go:495 s=494
+             runtime.inHeapOrStack /usr/local/go/src/runtime/mheap.go:650 s=648
+    47: 0x40c2bc M=1 runtime.cgoIsGoPointer /usr/local/go/src/runtime/cgocall.go:720 s=715
+    48: 0x40ba5a M=1 runtime.cgoCheckPointer /usr/local/go/src/runtime/cgocall.go:503 s=489
+    49: 0x951293 M=1 github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll.func1 /home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:168 s=168
+    50: 0x94ff55 M=1 github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll /home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:168 s=153
+    51: 0x9570ac M=1 github.com/confluentinc/confluent-kafka-go/v2/kafka.poller /home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:688 s=681
+    52: 0x956884 M=1 github.com/confluentinc/confluent-kafka-go/v2/kafka.NewProducer.func5 /home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:594 s=593
+    53: 0x41d69e M=1 runtime.(*mcache).prepareForSweep /usr/local/go/src/runtime/mcache.go:321 s=312
+    54: 0x44e969 M=1 runtime.acquirep /usr/local/go/src/runtime/proc.go:5748 s=5740
+    55: 0x4473f4 M=1 runtime.stopm /usr/local/go/src/runtime/proc.go:2783 s=2766
+    56: 0x44aeb7 M=1 runtime.goexit0 /usr/local/go/src/runtime/proc.go:4181 s=4179
+    57: 0x9e9001 M=1 video_server/kafka_client.SerializeToProtoBuf /home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:24 s=23
+    58: 0x9e9c54 M=1 video_server/kafka_client.(*kafkaClient).Publish /home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:107 s=106
+    59: 0x414db1 M=1 runtime.newobject /usr/local/go/src/runtime/malloc.go:1390 s=1389
+    60: 0x955835 M=1 github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush /home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:375 s=367
+    61: 0x9e9fa4 M=1 video_server/kafka_client.(*kafkaClient).Publish /home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:126 s=106
+    62: 0x44995f M=1 runtime.checkTimersNoP /usr/local/go/src/runtime/proc.go:3644 s=3640
+    63: 0x4489b2 M=1 runtime.findRunnable /usr/local/go/src/runtime/proc.go:3444 s=3139
+    64: 0x40904e M=1 runtime/internal/syscall.Syscall6 /usr/local/go/src/runtime/internal/syscall/asm_linux_amd64.s:36 s=27
+    65: 0x40902c M=1 syscall.RawSyscall6 /usr/local/go/src/runtime/internal/syscall/syscall_linux.go:38 s=37
+    66: 0x48d545 M=1 syscall.Syscall /usr/local/go/src/syscall/syscall_linux.go:82 s=68
+    67: 0x48bbda M=1 syscall.write /usr/local/go/src/syscall/zsyscall_linux_amd64.go:964 s=957
+    68: 0x4daae7 M=1 syscall.Write /usr/local/go/src/syscall/syscall_unix.go:209 s=199
+             internal/poll.ignoringEINTRIO /usr/local/go/src/internal/poll/fd_unix.go:736 s=734
+             internal/poll.(*FD).Write /usr/local/go/src/internal/poll/fd_unix.go:380 s=366
+    69: 0x4dff10 M=1 os.(*File).write /usr/local/go/src/os/file_posix.go:46 s=45
+             os.(*File).Write /usr/local/go/src/os/file.go:189 s=185
+    70: 0x4e92ae M=1 fmt.Fprintln /usr/local/go/src/fmt/print.go:305 s=302
+    71: 0x9e9704 M=1 fmt.Println /usr/local/go/src/fmt/print.go:314 s=313
+             video_server/kafka_client.(*kafkaClient).msgReportHandler.func1 /home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:71 s=63
+    72: 0x44bf07 M=1 runtime.exitsyscallfast_reacquired /usr/local/go/src/runtime/proc.go:4681 s=4658
+    73: 0x44bdd8 M=1 runtime.exitsyscallfast /usr/local/go/src/runtime/proc.go:4614 s=4601
+    74: 0x475639 M=1 runtime.exitsyscall /usr/local/go/src/runtime/proc.go:4513 s=4502
+    75: 0x40b104 M=1 runtime.cgocall /usr/local/go/src/runtime/cgocall.go:184 s=124
+    76: 0x9485ea M=1 github.com/confluentinc/confluent-kafka-go/v2/kafka._Cfunc_rd_kafka_flush _cgo_gotypes.go:4264 s=4263
+    77: 0x955b0c M=1 github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush.func1.1 /home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:377 s=377
+    78: 0x955a99 M=1 github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush.func1 /home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:377 s=375
+    79: 0x9e9684 M=1 fmt.Println /usr/local/go/src/fmt/print.go:314 s=313
+             video_server/kafka_client.(*kafkaClient).msgReportHandler.func1 /home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:70 s=63
+    80: 0x475a15 M=1 sync.runtime_procPin /usr/local/go/src/runtime/proc.go:7020 s=7019
+    81: 0x483e5c M=1 sync.(*Pool).pin /usr/local/go/src/sync/pool.go:207 s=199
+    82: 0x483bdb M=1 sync.(*Pool).Get /usr/local/go/src/sync/pool.go:132 s=128
+    83: 0x4e87b9 M=1 fmt.newPrinter /usr/local/go/src/fmt/print.go:152 s=151
+    84: 0x4e926f M=1 fmt.Fprintln /usr/local/go/src/fmt/print.go:303 s=302
+    85: 0x9ea215 M=1 fmt.Println /usr/local/go/src/fmt/print.go:314 s=313
+             video_server/stream.(*stream).listenFrame /home/dbarun/CDPG/video_server/stream/stream.go:46 s=44
+    86: 0x4dff37 M=1 os.(*File).Write /usr/local/go/src/os/file.go:194 s=185
+    87: 0x40ba0e M=1 runtime.cgoCheckPointer /usr/local/go/src/runtime/cgocall.go:498 s=489
+    88: 0x43c73d M=1 runtime.futexsleep /usr/local/go/src/runtime/os_linux.go:70 s=62
+    89: 0x42786a M=1 runtime.scanblock /usr/local/go/src/runtime/mgcmark.go:1374 s=1357
+    90: 0x4257d3 M=1 runtime.markrootBlock /usr/local/go/src/runtime/mgcmark.go:286 s=265
+    91: 0x4255c4 M=1 runtime.markroot /usr/local/go/src/runtime/mgcmark.go:172 s=164
+    92: 0x427553 M=1 runtime.gcDrain /usr/local/go/src/runtime/mgcmark.go:1200 s=1163
+    93: 0x4239e4 M=1 runtime.gcDrainMarkWorkerDedicated /usr/local/go/src/runtime/mgcmark.go:1124 s=1119
+             runtime.gcBgMarkWorker.func2 /usr/local/go/src/runtime/mgc.go:1387 s=1370
+    94: 0x423671 M=1 runtime.gcBgMarkWorker /usr/local/go/src/runtime/mgc.go:1370 s=1276
+    95: 0x427840 M=1 runtime.scanblock /usr/local/go/src/runtime/mgcmark.go:1383 s=1357
+    96: 0x425546 M=1 runtime.markroot /usr/local/go/src/runtime/mgcmark.go:178 s=164
+    97: 0x42771c M=1 runtime.gcDrainN /usr/local/go/src/runtime/mgcmark.go:1323 s=1289
+    98: 0x426251 M=1 runtime.gcAssistAlloc1 /usr/local/go/src/runtime/mgcmark.go:665 s=628
+    99: 0x42611a M=1 runtime.gcAssistAlloc.func1 /usr/local/go/src/runtime/mgcmark.go:556 s=555
+   100: 0x425e84 M=1 runtime.gcAssistAlloc /usr/local/go/src/runtime/mgcmark.go:555 s=407
+   101: 0x414cd3 M=1 runtime.deductAssistCredit /usr/local/go/src/runtime/malloc.go:1353 s=1337
+   102: 0x41444b M=1 runtime.mallocgc /usr/local/go/src/runtime/malloc.go:1025 s=971
+   103: 0x459a08 M=1 runtime.makeslice /usr/local/go/src/runtime/slice.go:107 s=92
+   104: 0x94ffb8 M=1 github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll /home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:225 s=153
+   105: 0x955924 M=1 github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush /home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:398 s=367
+   106: 0x44d300 M=1 runtime._ExternalCode /usr/local/go/src/runtime/proc.go:5291 s=5291
+   107: 0x44d2e0 M=1 runtime._System /usr/local/go/src/runtime/proc.go:5290 s=5290
+   108: 0x427a71 M=1 runtime.scanobject /usr/local/go/src/runtime/mgcmark.go:1474 s=1395
+   109: 0x427373 M=1 runtime.gcDrain /usr/local/go/src/runtime/mgcmark.go:1242 s=1163
+   110: 0x40a83e M=1 runtime.ifaceeq /usr/local/go/src/runtime/alg.go:341 s=328
+   111: 0x4da464 M=1 internal/poll.ignoringEINTRIO /usr/local/go/src/internal/poll/fd_unix.go:737 s=734
+             internal/poll.(*FD).Read /usr/local/go/src/internal/poll/fd_unix.go:160 s=140
+   112: 0x4dfa91 M=1 os.(*File).read /usr/local/go/src/os/file_posix.go:29 s=28
+             os.(*File).Read /usr/local/go/src/os/file.go:118 s=114
+   113: 0x94622b M=1 github.com/confluentinc/confluent-kafka-go/v2/kafka._Cfunc__rk_queue_poll _cgo_gotypes.go:1049 s=1048
+   114: 0x9512ea M=1 github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll.func1 /home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:168 s=168
+   115: 0x43c7ef M=1 runtime.futexwakeup /usr/local/go/src/runtime/os_linux.go:82 s=81
+   116: 0x413004 M=1 runtime.notewakeup /usr/local/go/src/runtime/lock_futex.go:155 s=149
+   117: 0x447688 M=1 runtime.startm /usr/local/go/src/runtime/proc.go:2895 s=2809
+   118: 0x94640d M=1 github.com/confluentinc/confluent-kafka-go/v2/kafka._Cfunc_do_produce _cgo_gotypes.go:1094 s=1093
+   119: 0x95512d M=1 github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).produce.func2 /home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:287 s=280
+   120: 0x954bbd M=1 github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).produce /home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:287 s=175
+   121: 0x449bdd M=1 runtime.resetspinning /usr/local/go/src/runtime/proc.go:3750 s=3737
+   122: 0x44a06e M=1 runtime.schedule /usr/local/go/src/runtime/proc.go:3886 s=3839
+   123: 0x48ba17 M=1 syscall.read /usr/local/go/src/syscall/zsyscall_linux_amd64.go:736 s=729
+   124: 0x4da42d M=1 syscall.Read /usr/local/go/src/syscall/syscall_unix.go:181 s=180
+             internal/poll.ignoringEINTRIO /usr/local/go/src/internal/poll/fd_unix.go:736 s=734
+             internal/poll.(*FD).Read /usr/local/go/src/internal/poll/fd_unix.go:160 s=140
+   125: 0x447ac0 M=1 runtime.wakep /usr/local/go/src/runtime/proc.go:2975 s=2975
+   126: 0x442d33 M=1 runtime.gopark /usr/local/go/src/runtime/proc.go:403 s=385
+   127: 0x40c94c M=1 runtime.chansend /usr/local/go/src/runtime/chan.go:259 s=160
+   128: 0x9558fb M=1 github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush /home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:397 s=367
+   129: 0x48ba89 M=1 syscall.read /usr/local/go/src/syscall/zsyscall_linux_amd64.go:741 s=729
+   130: 0x43c3fb M=1 runtime.netpoll /usr/local/go/src/runtime/netpoll_epoll.go:116 s=98
+   131: 0x44852f M=1 runtime.findRunnable /usr/local/go/src/runtime/proc.go:3230 s=3139
+   132: 0x40bbec M=1 runtime.cgoCheckArg /usr/local/go/src/runtime/cgocall.go:549 s=543
+   133: 0x40be90 M=1 runtime.cgoCheckArg /usr/local/go/src/runtime/cgocall.go:635 s=543
+   134: 0x40babd M=1 runtime.cgoCheckPointer /usr/local/go/src/runtime/cgocall.go:514 s=489
+   135: 0x9e9e14 M=1 video_server/kafka_client.(*kafkaClient).Publish /home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:121 s=106
+   136: 0x40d601 M=1 runtime.chanrecv /usr/local/go/src/runtime/chan.go:563 s=457
+   137: 0x40d2f1 M=1 runtime.chanrecv2 /usr/local/go/src/runtime/chan.go:447 s=446
+   138: 0x9ea276 M=1 video_server/stream.(*stream).listenFrame /home/dbarun/CDPG/video_server/stream/stream.go:45 s=44
+   139: 0x5b2584 M=1 net.(*netFD).Write /usr/local/go/src/net/fd_posix.go:96 s=95
+   140: 0x5bcbe4 M=1 net.(*conn).Write /usr/local/go/src/net/net.go:191 s=187
+   141: 0x6a9b2c M=1 net/http.checkConnErrorWriter.Write /usr/local/go/src/net/http/server.go:3798 s=3797
+   142: 0x630754 M=1 bufio.(*Writer).Flush /usr/local/go/src/bufio/bufio.go:639 s=632
+   143: 0x63096c M=1 bufio.(*Writer).Write /usr/local/go/src/bufio/bufio.go:683 s=673
+   144: 0x69d0c5 M=1 net/http.(*chunkWriter).Write /usr/local/go/src/net/http/server.go:387 s=372
+   145: 0x630989 M=1 bufio.(*Writer).Write /usr/local/go/src/bufio/bufio.go:679 s=673
+   146: 0x6a33bd M=1 net/http.(*response).write /usr/local/go/src/net/http/server.go:1653 s=1619
+   147: 0x6a3029 M=1 net/http.(*response).Write /usr/local/go/src/net/http/server.go:1611 s=1610
+   148: 0x6f6384 M=1 text/tabwriter.(*Writer).write0 /usr/local/go/src/text/tabwriter/tabwriter.go:251 s=250
+   149: 0x6f6855 M=1 text/tabwriter.(*Writer).writeLines /usr/local/go/src/text/tabwriter/tabwriter.go:318 s=295
+   150: 0x6f6b84 M=1 text/tabwriter.(*Writer).format /usr/local/go/src/text/tabwriter/tabwriter.go:405 s=350
+   151: 0x6f6b30 M=1 text/tabwriter.(*Writer).format /usr/local/go/src/text/tabwriter/tabwriter.go:399 s=350
+   152: 0x6f70f5 M=1 text/tabwriter.(*Writer).flushNoDefers /usr/local/go/src/text/tabwriter/tabwriter.go:513 s=502
+   153: 0x6f752e M=1 text/tabwriter.(*Writer).Write /usr/local/go/src/text/tabwriter/tabwriter.go:546 s=522
+   154: 0x4e8c96 M=1 fmt.Fprintf /usr/local/go/src/fmt/print.go:225 s=222
+   155: 0x6fb47b M=1 runtime/pprof.printStackRecord /usr/local/go/src/runtime/pprof/pprof.go:553 s=528
+   156: 0x6fbad7 M=1 runtime/pprof.writeHeapInternal /usr/local/go/src/runtime/pprof/pprof.go:661 s=581
+   157: 0x6fb5e8 M=1 runtime/pprof.writeAlloc /usr/local/go/src/runtime/pprof/pprof.go:578 s=577
+   158: 0x6f990a M=1 runtime/pprof.(*Profile).WriteTo /usr/local/go/src/runtime/pprof/pprof.go:369 s=364
+   159: 0x709a2e M=1 net/http/pprof.handler.ServeHTTP /usr/local/go/src/net/http/pprof/pprof.go:267 s=245
+   160: 0x70a51d M=1 net/http/pprof.Index /usr/local/go/src/net/http/pprof/pprof.go:384 s=381
+   161: 0x6a5528 M=1 net/http.HandlerFunc.ServeHTTP /usr/local/go/src/net/http/server.go:2166 s=2165
+   162: 0x6a73ac M=1 net/http.(*ServeMux).ServeHTTP /usr/local/go/src/net/http/server.go:2683 s=2669
+   163: 0x6a84ad M=1 net/http.serverHandler.ServeHTTP /usr/local/go/src/net/http/server.go:3137 s=3128
+   164: 0x6a4167 M=1 net/http.(*conn).serve /usr/local/go/src/net/http/server.go:2039 s=1888
+   165: 0x44bfe4 M=1 runtime.exitsyscallfast_pidle /usr/local/go/src/runtime/proc.go:4688 s=4683
+   166: 0x44be5a M=1 runtime.exitsyscallfast.func1 /usr/local/go/src/runtime/proc.go:4628 s=4627
+   167: 0x44bd90 M=1 runtime.exitsyscallfast /usr/local/go/src/runtime/proc.go:4627 s=4601
+   168: 0x9e9f8b M=1 fmt.Println /usr/local/go/src/fmt/print.go:314 s=313
+             video_server/kafka_client.(*kafkaClient).Publish /home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:125 s=106
+   169: 0x412f36 M=1 runtime.unlock2 /usr/local/go/src/runtime/lock_futex.go:126 s=124
+   170: 0x447548 M=1 runtime.unlockWithRank /usr/local/go/src/runtime/lockrank_off.go:34 s=33
+             runtime.unlock /usr/local/go/src/runtime/lock_futex.go:121 s=120
+             runtime.startm /usr/local/go/src/runtime/proc.go:2881 s=2809
+   171: 0x4ebd54 M=1 fmt.(*pp).printArg /usr/local/go/src/fmt/print.go:707 s=681
+   172: 0x4efc97 M=1 fmt.(*pp).doPrintln /usr/local/go/src/fmt/print.go:1221 s=1216
+   173: 0x4e9288 M=1 fmt.Fprintln /usr/local/go/src/fmt/print.go:304 s=302
+   174: 0x41310e M=1 runtime.notesleep /usr/local/go/src/runtime/lock_futex.go:171 s=158
+   175: 0x4da362 M=1 internal/poll.(*FD).Read /usr/local/go/src/internal/poll/fd_unix.go:160 s=140
+   176: 0x40d2a4 M=1 runtime.closechan.goready.func1 /usr/local/go/src/runtime/proc.go:413 s=412
+   177: 0x40d1ef M=1 runtime.goready /usr/local/go/src/runtime/proc.go:412 s=411
+             runtime.closechan /usr/local/go/src/runtime/chan.go:424 s=357
+   178: 0x9559bb M=1 github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush /home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:402 s=367
+   179: 0x955701 M=1 github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Len /home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:360 s=359
+   180: 0x955931 M=1 github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush /home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:385 s=367
+   181: 0x460411 M=1 runtime.findfunc /usr/local/go/src/runtime/symtab.go:791 s=771
+   182: 0x46e484 M=1 runtime.isSystemGoroutine /usr/local/go/src/runtime/traceback.go:1321 s=1319
+   183: 0x44c5f7 M=1 runtime.newproc1 /usr/local/go/src/runtime/proc.go:4936 s=4892
+   184: 0x44c43e M=1 runtime.newproc.func1 /usr/local/go/src/runtime/proc.go:4878 s=4877
+   185: 0x44c3ea M=1 runtime.newproc /usr/local/go/src/runtime/proc.go:4877 s=4874
+   186: 0x95587d M=1 github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush /home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:375 s=367
+   187: 0x418b0d M=1 runtime.mapaccess2_fast64 /usr/local/go/src/runtime/map_fast64.go:58 s=53
+   188: 0x952044 M=1 github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).getTopicNameFromRkt /home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/handle.go:226 s=222
+   189: 0x953f4b M=1 github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC /home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:141 s=139
+   190: 0x9507c9 M=1 github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).newMessageFromC /home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:177 s=174
+             github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll /home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:230 s=153
+   191: 0x44a214 M=1 runtime/internal/atomic.(*Int64).Load /usr/local/go/src/runtime/internal/atomic/types.go:74 s=73
+             runtime.checkTimers /usr/local/go/src/runtime/proc.go:3948 s=3945
+   192: 0x44958c M=1 runtime.stealWork /usr/local/go/src/runtime/proc.go:3577 s=3544
+   193: 0x4485e4 M=1 runtime.findRunnable /usr/local/go/src/runtime/proc.go:3254 s=3139
+   194: 0x4dff06 M=1 os.(*File).write /usr/local/go/src/os/file_posix.go:46 s=45
+             os.(*File).Write /usr/local/go/src/os/file.go:189 s=185
+   195: 0x411fa4 M=1 runtime.convT64 /usr/local/go/src/runtime/iface.go:378 s=378
+   196: 0x9ea1e4 M=1 video_server/stream.(*stream).listenFrame /home/dbarun/CDPG/video_server/stream/stream.go:46 s=44
+   197: 0x44c467 M=1 runtime.newproc.func1 /usr/local/go/src/runtime/proc.go:4884 s=4877
+   198: 0x40d51f M=1 runtime.chanrecv /usr/local/go/src/runtime/chan.go:563 s=457
+   199: 0x955aa8 M=1 github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush.func1 /home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:376 s=375
+   200: 0x448086 M=1 runtime.execute /usr/local/go/src/runtime/proc.go:3105 s=3093
+   201: 0x44a19b M=1 runtime.schedule /usr/local/go/src/runtime/proc.go:3918 s=3839
+   202: 0x44a797 M=1 runtime.goschedImpl /usr/local/go/src/runtime/proc.go:4065 s=4039
+   203: 0x45be50 M=1 runtime.gopreempt_m /usr/local/go/src/runtime/proc.go:4082 s=4081
+             runtime.newstack /usr/local/go/src/runtime/stack.go:1070 s=962
+   204: 0x478699 M=1 runtime.morestack /usr/local/go/src/runtime/asm_amd64.s:616 s=575
+   205: 0x408fc4 M=1 runtime/internal/syscall.EpollWait /usr/local/go/src/runtime/internal/syscall/syscall_linux.go:55 s=48
+   206: 0x43c431 M=1 runtime.netpoll /usr/local/go/src/runtime/netpoll_epoll.go:118 s=98
+   207: 0x448aa4 M=1 runtime.findRunnable /usr/local/go/src/runtime/proc.go:3470 s=3139
+   208: 0x44751b M=1 runtime.mget /usr/local/go/src/runtime/proc.go:6382 s=6377
+             runtime.startm /usr/local/go/src/runtime/proc.go:2846 s=2809
+   209: 0x4494c2 M=1 runtime.(*randomEnum).next /usr/local/go/src/runtime/proc.go:7108 s=7106
+             runtime.stealWork /usr/local/go/src/runtime/proc.go:3553 s=3544
+   210: 0x4494f1 M=1 runtime/internal/atomic.(*Bool).Load /usr/local/go/src/runtime/internal/atomic/types.go:168 s=167
+             runtime.stealWork /usr/local/go/src/runtime/proc.go:3554 s=3544
+   211: 0x41cc59 M=1 runtime.(*mspan).writeHeapBitsSmall /usr/local/go/src/runtime/mbitmap_allocheaders.go:818 s=786
+   212: 0x41ce37 M=1 runtime.heapSetType /usr/local/go/src/runtime/mbitmap_allocheaders.go:863 s=854
+   213: 0x414a0c M=1 runtime.mallocgc /usr/local/go/src/runtime/malloc.go:1183 s=971
+   214: 0x414dc4 M=1 runtime.newobject /usr/local/go/src/runtime/malloc.go:1390 s=1389
+   215: 0x9e9bf8 M=1 video_server/kafka_client.(*kafkaClient).Publish /home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:106 s=106
+   216: 0x443081 M=1 runtime.releaseSudog /usr/local/go/src/runtime/proc.go:456 s=456
+   217: 0x40ca14 M=1 runtime.chansend /usr/local/go/src/runtime/chan.go:278 s=160
+   218: 0x447b06 M=1 runtime.wakep /usr/local/go/src/runtime/proc.go:2990 s=2975
+   219: 0x9547a9 M=1 github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).produce /home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:199 s=175
+   220: 0x954058 M=1 github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC /home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:151 s=139
+Mappings
+1: 0x405000/0xeff000/0x5000 /tmp/go-build4027724105/b001/exe/video_server 4f74ec2b735ea1ef6764df397cb6d6184699f7f5 [FN]
+2: 0x7e5ca5aa8000/0x7e5ca5ac8000/0x3000 /usr/lib/libnss_resolve.so.2 f253879535d80d77ea191a118b259504fef5bcbf [FN]
+3: 0x7e5ca5ad7000/0x7e5ca5afa000/0x4000 /usr/lib/libgcc_s.so.1 8c0ffe8bf2a254b55ccb92b8cb7c40d1660dd831 [FN]
+4: 0x7e5cec411000/0x7e5cec416000/0x3000 /usr/lib/libcap.so.2.70 5bd40b4779a5c9091f3e39d71362bbd79798d0c9 [FN]
+5: 0x7e5cec41e000/0x7e5cec45b000/0x4000 /usr/lib/libnss_mymachines.so.2 8dfc73affb06f38e6392429711afc53ada28f517 [FN]
+6: 0x7e5cec675000/0x7e5cec7e1000/0x24000 /usr/lib/libc.so.6 32a656aa5562eece8c59a585f5eacd6cf5e2307b [FN]
+7: 0x7e5cec840000/0x7e5cec849000/0x3000 /usr/lib/libresolv.so.2 2dbc809e5e0bb6ce0ba55e1f76adec9ef3d8d4df [FN]
+8: 0x7e5cec85d000/0x7e5cec8dd000/0xe000 /usr/lib/libm.so.6 0dea7cefe4d6449ebe473e5105dfa57d774fa3c3 [FN]
+9: 0x7e5cec93e000/0x7e5cec940000/0x1000 /usr/lib/libnss_mdns_minimal.so.2 8eb55de0d3252a36920a5d74c2da924a902cfff4 [FN]
+10: 0x7e5cec967000/0x7e5cec969000/0x0 [vdso]  
+11: 0x7e5cec96a000/0x7e5cec991000/0x1000 /usr/lib/ld-linux-x86-64.so.2 c560bca2bb17f5f25c6dafd8fc19cf1883f88558 [FN]
+12: 0xffffffffff600000/0xffffffffff601000/0x0 [vsyscall]  
