@@ -17,6 +17,7 @@ type chanWriter struct{
     frameChan chan []byte 
 }
 
+
 type stream struct{
     publisher publisher 
     serializeFunc func(i interface{}) ([]byte, error)
@@ -41,12 +42,14 @@ func(c *chanWriter) Write(p []byte) (int, error){
 }
 
 
-func(s *stream) listenFrame(topic string, frameChan <- chan []byte, ) {
-    for imageData:= range frameChan{
-       fmt.Println("Bytes Recieve", len(imageData)) 
-       /* Testing */ 
-       // go process(e)
-       s.publisher.Publish(topic, imageData, s.serializeFunc)
+func(s *stream) listenFrame(topic string, frameChan <- chan []byte ) {
+    for{
+        select{
+        case imageData := <-frameChan:
+            /* Testing */ 
+            // go process(e)
+            s.publisher.Publish(topic, imageData, nil)
+        }
     }
 }
 
@@ -77,7 +80,7 @@ func process(imgData []byte){
 /* =========================== */ 
 
 func(s *stream) HandleRTSPStream(ctx context.Context, config configs.FFMPEG_RstpStreamConfig, cam models.Camera){ 
-    fChan := make(chan []byte, 8)
+    fChan := make(chan []byte, 2)
     cw := chanWriter{
        frameChan: fChan, 
     }
@@ -99,6 +102,7 @@ func(s *stream) HandleRTSPStream(ctx context.Context, config configs.FFMPEG_Rstp
 		Run()
     if err != nil{
         slog.Error("Failed to spilt the frame", "Details", err.Error(), "URL", config.ConnURL)
+        return
     }
     fmt.Println("----------------Done") 
     return

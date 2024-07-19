@@ -1,0 +1,10 @@
+threadcreate profile: total 385
+384 @
+#	0x0
+
+1 @ 0x4463c5 0x446ef5 0x4471e5 0x442853 0x47a541
+#	0x4463c4	runtime.allocm+0xc4			/usr/local/go/src/runtime/proc.go:2110
+#	0x446ef4	runtime.newm+0x34			/usr/local/go/src/runtime/proc.go:2644
+#	0x4471e4	runtime.startTemplateThread+0x84	/usr/local/go/src/runtime/proc.go:2721
+#	0x442852	runtime.main+0x212			/usr/local/go/src/runtime/proc.go:241
+

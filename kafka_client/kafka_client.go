@@ -63,6 +63,7 @@ func NewKafkaClient(configMap kf.ConfigMap) (*kafkaClient, error) {
 	ac, err := kf.NewAdminClient(&configMap)
 	if err != nil {
 		slog.Error("Failed to create new adim client", "Details", err.Error())
+        return nil, err
 	}
 
 	now := time.Now()
@@ -126,6 +127,7 @@ func (ka *kafkaClient) CreateTopic(topic string, tS ...kf.TopicSpecification) er
 }
 
 func(ka *kafkaClient) Close(){
+    ka.adminClient.Close()
     ka.producer.Close()
 }
 
@@ -139,12 +141,11 @@ func (ka *kafkaClient) Publish(topic string, data interface{}, serializeFunc fun
     msg := kf.Message{
 			TopicPartition: kf.TopicPartition{Topic: &topic, Partition: kf.PartitionAny},
 			Value:          dataByt,
-            Timestamp: time.Now(),
-            TimestampType: kf.TimestampCreateTime,
+            Timestamp: time.Now().In(time.Local),            TimestampType: kf.TimestampCreateTime,
             Headers: []kf.Header{
                 {
                     Key: "timeStamp",
-                    Value: []byte(time.Now().Format(time.RFC3339)),
+                    Value: []byte(time.Now().Format("2006-01-02 15:04:05.000")),
                 },
                 {
                     Key: "cameraName",
@@ -152,10 +153,10 @@ func (ka *kafkaClient) Publish(topic string, data interface{}, serializeFunc fun
                 },
             },
     }
-    msg.Timestamp = time.Now().In(time.Local)
 	err := ka.producer.Produce(&msg, nil)
 	if err != nil {
 		slog.Error("KAFKA Failed to publish message", "Details", err.Error())
+        return 
 	}
 	fmt.Println("KAFKA", topic, time.Since(now))
     ka.producer.Flush(1000)
@@ -187,7 +188,7 @@ func (ka *kafkaClient) Subscribe(topic string) {
 	}
 	run := true
 	for run {
-		msg, err := c.ReadMessage(250 * time.Millisecond)
+		msg, err := c.ReadMessage(350 * time.Millisecond)
 		if err == nil {
 			fmt.Println(topic)
 			now := time.Now()

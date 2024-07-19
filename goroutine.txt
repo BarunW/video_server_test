@@ -1,0 +1,153 @@
+goroutine profile: total 485
+118 @ 0x48d5b9 0x4e35b6 0x4df325 0x826645 0x82663d 0x8252ad 0x922ffa 0x9eb83a 0x47a541
+#	0x48d5b8	syscall.Syscall6+0x38					/usr/local/go/src/syscall/syscall_linux.go:91
+#	0x4e35b5	os.(*Process).blockUntilWaitable+0x75			/usr/local/go/src/os/wait_waitid.go:32
+#	0x4df324	os.(*Process).wait+0x24					/usr/local/go/src/os/exec_unix.go:22
+#	0x826644	os.(*Process).Wait+0x44					/usr/local/go/src/os/exec.go:134
+#	0x82663c	os/exec.(*Cmd).Wait+0x3c				/usr/local/go/src/os/exec/exec.go:897
+#	0x8252ac	os/exec.(*Cmd).Run+0x2c					/usr/local/go/src/os/exec/exec.go:607
+#	0x922ff9	github.com/u2takey/ffmpeg-go.(*Stream).Run+0xf9		/home/dbarun/go/pkg/mod/github.com/u2takey/ffmpeg-go@v0.5.0/run.go:288
+#	0x9eb839	video_server/stream.(*stream).HandleRTSPStream+0x239	/home/dbarun/CDPG/video_server/stream/stream.go:101
+
+117 @ 0x40b0ab 0x9485eb 0x955b0d 0x955a9a 0x47a541
+#	0x9485ea	github.com/confluentinc/confluent-kafka-go/v2/kafka._Cfunc_rd_kafka_flush+0x4a		_cgo_gotypes.go:4264
+#	0x955b0c	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush.func1.1+0x4c	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:377
+#	0x955a99	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush.func1+0x39	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:377
+
+110 @ 0x442d2e 0x40c94d 0x40c5b7 0x9eb4ca 0x4d45de 0x4e01d8 0x4e018f 0x4e00fc 0x4d449d 0x825234 0x825220 0x825ecc 0x47a541
+#	0x9eb4c9	video_server/stream.(*chanWriter).Write+0x29	/home/dbarun/CDPG/video_server/stream/stream.go:38
+#	0x4d45dd	io.copyBuffer+0x1dd				/usr/local/go/src/io/io.go:431
+#	0x4e01d7	io.Copy+0x57					/usr/local/go/src/io/io.go:388
+#	0x4e018e	os.genericWriteTo+0xe				/usr/local/go/src/os/file.go:269
+#	0x4e00fb	os.(*File).WriteTo+0x9b				/usr/local/go/src/os/file.go:247
+#	0x4d449c	io.copyBuffer+0x9c				/usr/local/go/src/io/io.go:411
+#	0x825233	io.Copy+0x33					/usr/local/go/src/io/io.go:388
+#	0x82521f	os/exec.(*Cmd).writerDescriptor.func1+0x1f	/usr/local/go/src/os/exec/exec.go:577
+#	0x825ecb	os/exec.(*Cmd).Start.func2+0x2b			/usr/local/go/src/os/exec/exec.go:724
+
+108 @ 0x40b0ab 0x94622c 0x9512eb 0x94ff56 0x955925 0x9eb37e 0x9ebb5f 0x47a541
+#	0x94622b	github.com/confluentinc/confluent-kafka-go/v2/kafka._Cfunc__rk_queue_poll+0x4b		_cgo_gotypes.go:1049
+#	0x9512ea	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll.func1+0xca	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:168
+#	0x94ff55	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll+0xf5		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:168
+#	0x955924	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush+0x164		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:398
+#	0x9eb37d	video_server/kafka_client.(*kafkaClient).Publish+0x57d					/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:162
+#	0x9ebb5e	video_server/stream.(*stream).listenFrame+0x9e						/home/dbarun/CDPG/video_server/stream/stream.go:50
+
+8 @ 0x442d2e 0x43ba97 0x474c45 0x4d96e7 0x4da3fa 0x4da3e8 0x4dfa92 0x4dfa8a 0x4d4591 0x4e01d8 0x4e018f 0x4e00fc 0x4d449d 0x825234 0x825220 0x825ecc 0x47a541
+#	0x474c44	internal/poll.runtime_pollWait+0x84		/usr/local/go/src/runtime/netpoll.go:345
+#	0x4d96e6	internal/poll.(*pollDesc).wait+0x26		/usr/local/go/src/internal/poll/fd_poll_runtime.go:84
+#	0x4da3f9	internal/poll.(*pollDesc).waitRead+0x279	/usr/local/go/src/internal/poll/fd_poll_runtime.go:89
+#	0x4da3e7	internal/poll.(*FD).Read+0x267			/usr/local/go/src/internal/poll/fd_unix.go:164
+#	0x4dfa91	os.(*File).read+0x51				/usr/local/go/src/os/file_posix.go:29
+#	0x4dfa89	os.(*File).Read+0x49				/usr/local/go/src/os/file.go:118
+#	0x4d4590	io.copyBuffer+0x190				/usr/local/go/src/io/io.go:429
+#	0x4e01d7	io.Copy+0x57					/usr/local/go/src/io/io.go:388
+#	0x4e018e	os.genericWriteTo+0xe				/usr/local/go/src/os/file.go:269
+#	0x4e00fb	os.(*File).WriteTo+0x9b				/usr/local/go/src/os/file.go:247
+#	0x4d449c	io.copyBuffer+0x9c				/usr/local/go/src/io/io.go:411
+#	0x825233	io.Copy+0x33					/usr/local/go/src/io/io.go:388
+#	0x82521f	os/exec.(*Cmd).writerDescriptor.func1+0x1f	/usr/local/go/src/os/exec/exec.go:577
+#	0x825ecb	os/exec.(*Cmd).Start.func2+0x2b			/usr/local/go/src/os/exec/exec.go:724
+
+7 @ 0x40b0ab 0x948b07 0x95577f 0x9556fc 0x955932 0x9eb37e 0x9ebb5f 0x47a541
+#	0x948b06	github.com/confluentinc/confluent-kafka-go/v2/kafka._Cfunc_rd_kafka_outq_len+0x46	_cgo_gotypes.go:4650
+#	0x95577e	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Len.func1+0x3e		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:360
+#	0x9556fb	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Len+0x3b		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:360
+#	0x955931	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush+0x171		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:385
+#	0x9eb37d	video_server/kafka_client.(*kafkaClient).Publish+0x57d					/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:162
+#	0x9ebb5e	video_server/stream.(*stream).listenFrame+0x9e						/home/dbarun/CDPG/video_server/stream/stream.go:50
+
+3 @ 0x442d2e 0x40c94d 0x40c5b7 0x9558fc 0x9eb37e 0x9ebb5f 0x47a541
+#	0x9558fb	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush+0x13b	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:397
+#	0x9eb37d	video_server/kafka_client.(*kafkaClient).Publish+0x57d				/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:162
+#	0x9ebb5e	video_server/stream.(*stream).listenFrame+0x9e					/home/dbarun/CDPG/video_server/stream/stream.go:50
+
+2 @ 0x442d2e 0x40d6bf 0x40d2f2 0x955aa9 0x47a541
+#	0x955aa8	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush.func1+0x48	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:376
+
+1 @ 0x40b0ab 0x94622c 0x9512eb 0x94ff56 0x9570ad 0x956885 0x47a541
+#	0x94622b	github.com/confluentinc/confluent-kafka-go/v2/kafka._Cfunc__rk_queue_poll+0x4b		_cgo_gotypes.go:1049
+#	0x9512ea	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll.func1+0xca	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:168
+#	0x94ff55	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll+0xf5		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:168
+#	0x9570ac	github.com/confluentinc/confluent-kafka-go/v2/kafka.poller+0x4c				/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:688
+#	0x956884	github.com/confluentinc/confluent-kafka-go/v2/kafka.NewProducer.func5+0x24		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:594
+
+1 @ 0x4133e9 0x476d09 0x70ba33 0x47a541
+#	0x476d08	os/signal.signal_recv+0x28	/usr/local/go/src/runtime/sigqueue.go:152
+#	0x70ba32	os/signal.loop+0x12		/usr/local/go/src/os/signal/signal_unix.go:23
+
+1 @ 0x438471 0x47487d 0x6fccb1 0x6fcae5 0x6f990b 0x709a2f 0x70a51e 0x6a5529 0x6a73ad 0x6a84ae 0x6a4168 0x47a541
+#	0x47487c	runtime/pprof.runtime_goroutineProfileWithLabels+0x1c	/usr/local/go/src/runtime/mprof.go:1079
+#	0x6fccb0	runtime/pprof.writeRuntimeProfile+0xb0			/usr/local/go/src/runtime/pprof/pprof.go:774
+#	0x6fcae4	runtime/pprof.writeGoroutine+0x44			/usr/local/go/src/runtime/pprof/pprof.go:734
+#	0x6f990a	runtime/pprof.(*Profile).WriteTo+0x14a			/usr/local/go/src/runtime/pprof/pprof.go:369
+#	0x709a2e	net/http/pprof.handler.ServeHTTP+0x52e			/usr/local/go/src/net/http/pprof/pprof.go:267
+#	0x70a51d	net/http/pprof.Index+0xdd				/usr/local/go/src/net/http/pprof/pprof.go:384
+#	0x6a5528	net/http.HandlerFunc.ServeHTTP+0x28			/usr/local/go/src/net/http/server.go:2166
+#	0x6a73ac	net/http.(*ServeMux).ServeHTTP+0x1ac			/usr/local/go/src/net/http/server.go:2683
+#	0x6a84ad	net/http.serverHandler.ServeHTTP+0x8d			/usr/local/go/src/net/http/server.go:3137
+#	0x6a4167	net/http.(*conn).serve+0x5e7				/usr/local/go/src/net/http/server.go:2039
+
+1 @ 0x442d2e 0x40d6bf 0x40d2d2 0x9ec1e5 0x4428dd 0x47a541
+#	0x9ec1e4	main.main+0x5e4		/home/dbarun/CDPG/video_server/main.go:111
+#	0x4428dc	runtime.main+0x29c	/usr/local/go/src/runtime/proc.go:271
+
+1 @ 0x442d2e 0x40d6bf 0x40d2f2 0x956afd 0x956822 0x47a541
+#	0x956afc	github.com/confluentinc/confluent-kafka-go/v2/kafka.channelProducer+0x3c	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:617
+#	0x956821	github.com/confluentinc/confluent-kafka-go/v2/kafka.NewProducer.func6+0x21	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:608
+
+1 @ 0x442d2e 0x40d6bf 0x40d2f2 0x9ea7a6 0x47a541
+#	0x9ea7a5	video_server/kafka_client.(*kafkaClient).msgReportHandler.func1+0x45	/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:87
+
+1 @ 0x442d2e 0x43ba97 0x474c45 0x4d96e7 0x4da3fa 0x4da3e8 0x5b2485 0x5bca25 0x69e197 0x47a541
+#	0x474c44	internal/poll.runtime_pollWait+0x84		/usr/local/go/src/runtime/netpoll.go:345
+#	0x4d96e6	internal/poll.(*pollDesc).wait+0x26		/usr/local/go/src/internal/poll/fd_poll_runtime.go:84
+#	0x4da3f9	internal/poll.(*pollDesc).waitRead+0x279	/usr/local/go/src/internal/poll/fd_poll_runtime.go:89
+#	0x4da3e7	internal/poll.(*FD).Read+0x267			/usr/local/go/src/internal/poll/fd_unix.go:164
+#	0x5b2484	net.(*netFD).Read+0x24				/usr/local/go/src/net/fd_posix.go:55
+#	0x5bca24	net.(*conn).Read+0x44				/usr/local/go/src/net/net.go:179
+#	0x69e196	net/http.(*connReader).backgroundRead+0x36	/usr/local/go/src/net/http/server.go:681
+
+1 @ 0x442d2e 0x43ba97 0x474c45 0x4d96e7 0x4da3fa 0x4da3e8 0x5b2485 0x5bca25 0x69e62b 0x62efa3 0x62fa49 0x62fca5 0x631e05 0x697455 0x697470 0x69fbc8 0x6a3eb9 0x47a541
+#	0x474c44	internal/poll.runtime_pollWait+0x84		/usr/local/go/src/runtime/netpoll.go:345
+#	0x4d96e6	internal/poll.(*pollDesc).wait+0x26		/usr/local/go/src/internal/poll/fd_poll_runtime.go:84
+#	0x4da3f9	internal/poll.(*pollDesc).waitRead+0x279	/usr/local/go/src/internal/poll/fd_poll_runtime.go:89
+#	0x4da3e7	internal/poll.(*FD).Read+0x267			/usr/local/go/src/internal/poll/fd_unix.go:164
+#	0x5b2484	net.(*netFD).Read+0x24				/usr/local/go/src/net/fd_posix.go:55
+#	0x5bca24	net.(*conn).Read+0x44				/usr/local/go/src/net/net.go:179
+#	0x69e62a	net/http.(*connReader).Read+0x14a		/usr/local/go/src/net/http/server.go:789
+#	0x62efa2	bufio.(*Reader).fill+0x102			/usr/local/go/src/bufio/bufio.go:110
+#	0x62fa48	bufio.(*Reader).ReadSlice+0x28			/usr/local/go/src/bufio/bufio.go:376
+#	0x62fca4	bufio.(*Reader).ReadLine+0x24			/usr/local/go/src/bufio/bufio.go:405
+#	0x631e04	net/textproto.(*Reader).readLineSlice+0xa4	/usr/local/go/src/net/textproto/reader.go:63
+#	0x697454	net/textproto.(*Reader).ReadLine+0xb4		/usr/local/go/src/net/textproto/reader.go:43
+#	0x69746f	net/http.readRequest+0xcf			/usr/local/go/src/net/http/request.go:1059
+#	0x69fbc7	net/http.(*conn).readRequest+0x247		/usr/local/go/src/net/http/server.go:1004
+#	0x6a3eb8	net/http.(*conn).serve+0x338			/usr/local/go/src/net/http/server.go:1964
+
+1 @ 0x442d2e 0x43ba97 0x474c45 0x4d96e7 0x4daf4c 0x4daf3a 0x5b3589 0x5c455e 0x5c38b0 0x6a88de 0x6a8571 0x9ec33b 0x47a541
+#	0x474c44	internal/poll.runtime_pollWait+0x84		/usr/local/go/src/runtime/netpoll.go:345
+#	0x4d96e6	internal/poll.(*pollDesc).wait+0x26		/usr/local/go/src/internal/poll/fd_poll_runtime.go:84
+#	0x4daf4b	internal/poll.(*pollDesc).waitRead+0x2ab	/usr/local/go/src/internal/poll/fd_poll_runtime.go:89
+#	0x4daf39	internal/poll.(*FD).Accept+0x299		/usr/local/go/src/internal/poll/fd_unix.go:611
+#	0x5b3588	net.(*netFD).accept+0x28			/usr/local/go/src/net/fd_unix.go:172
+#	0x5c455d	net.(*TCPListener).accept+0x1d			/usr/local/go/src/net/tcpsock_posix.go:159
+#	0x5c38af	net.(*TCPListener).Accept+0x2f			/usr/local/go/src/net/tcpsock.go:327
+#	0x6a88dd	net/http.(*Server).Serve+0x33d			/usr/local/go/src/net/http/server.go:3255
+#	0x6a8570	net/http.(*Server).ListenAndServe+0x70		/usr/local/go/src/net/http/server.go:3184
+#	0x9ec33a	main.main.func3+0x1a				/home/dbarun/CDPG/video_server/main.go:105
+
+1 @ 0x442d2e 0x454b65 0x7081b1 0x708925 0x6a5529 0x6a73ad 0x6a84ae 0x6a4168 0x47a541
+#	0x7081b0	net/http/pprof.sleep+0x90		/usr/local/go/src/net/http/pprof/pprof.go:111
+#	0x708924	net/http/pprof.Profile+0x364		/usr/local/go/src/net/http/pprof/pprof.go:155
+#	0x6a5528	net/http.HandlerFunc.ServeHTTP+0x28	/usr/local/go/src/net/http/server.go:2166
+#	0x6a73ac	net/http.(*ServeMux).ServeHTTP+0x1ac	/usr/local/go/src/net/http/server.go:2683
+#	0x6a84ad	net/http.serverHandler.ServeHTTP+0x8d	/usr/local/go/src/net/http/server.go:3137
+#	0x6a4167	net/http.(*conn).serve+0x5e7		/usr/local/go/src/net/http/server.go:2039
+
+1 @ 0x442d2e 0x477555 0x6fd1ca 0x47a541
+#	0x477554	time.Sleep+0x114			/usr/local/go/src/runtime/time.go:195
+#	0x6fd1c9	runtime/pprof.profileWriter+0x49	/usr/local/go/src/runtime/pprof/pprof.go:849
+
+1 @ 0x47a541
+

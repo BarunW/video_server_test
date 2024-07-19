@@ -1,0 +1,653 @@
+heap profile: 15: 24247760 [444: 26465024] @ heap/1048576
+1: 16007168 [1: 16007168] @ 0x956305 0x9ea465 0x9ebda6 0x4428dd 0x47a541
+#	0x956304	github.com/confluentinc/confluent-kafka-go/v2/kafka.NewProducer+0x684	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:583
+#	0x9ea464	video_server/kafka_client.NewKafkaClient+0x64				/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:70
+#	0x9ebda5	main.main+0x1a5								/home/dbarun/CDPG/video_server/main.go:29
+#	0x4428dc	runtime.main+0x29c							/usr/local/go/src/runtime/proc.go:271
+
+1: 8003584 [1: 8003584] @ 0x956345 0x9ea465 0x9ebda6 0x4428dd 0x47a541
+#	0x956344	github.com/confluentinc/confluent-kafka-go/v2/kafka.NewProducer+0x6c4	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:584
+#	0x9ea464	video_server/kafka_client.NewKafkaClient+0x64				/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:70
+#	0x9ebda5	main.main+0x1a5								/home/dbarun/CDPG/video_server/main.go:29
+#	0x4428dc	runtime.main+0x29c							/usr/local/go/src/runtime/proc.go:271
+
+6: 196608 [6: 196608] @ 0x4d4505 0x4e01d8 0x4e018f 0x4e00fc 0x4d449d 0x825234 0x825220 0x825ecc 0x47a541
+#	0x4d4504	io.copyBuffer+0x104				/usr/local/go/src/io/io.go:426
+#	0x4e01d7	io.Copy+0x57					/usr/local/go/src/io/io.go:388
+#	0x4e018e	os.genericWriteTo+0xe				/usr/local/go/src/os/file.go:269
+#	0x4e00fb	os.(*File).WriteTo+0x9b				/usr/local/go/src/os/file.go:247
+#	0x4d449c	io.copyBuffer+0x9c				/usr/local/go/src/io/io.go:411
+#	0x825233	io.Copy+0x33					/usr/local/go/src/io/io.go:388
+#	0x82521f	os/exec.(*Cmd).writerDescriptor.func1+0x1f	/usr/local/go/src/os/exec/exec.go:577
+#	0x825ecb	os/exec.(*Cmd).Start.func2+0x2b			/usr/local/go/src/os/exec/exec.go:724
+
+1: 32768 [1: 32768] @ 0x415b8d 0x4158fa 0x71a1ed 0x451328 0x442990 0x442880 0x47a541
+#	0x71a1ec	github.com/aws/aws-sdk-go/aws/endpoints.init+0xeec	/home/dbarun/go/pkg/mod/github.com/aws/aws-sdk-go@v1.54.18/aws/endpoints/defaults.go:248
+#	0x451327	runtime.doInit1+0xe7					/usr/local/go/src/runtime/proc.go:7176
+#	0x44298f	runtime.doInit+0x34f					/usr/local/go/src/runtime/proc.go:7143
+#	0x44287f	runtime.main+0x23f					/usr/local/go/src/runtime/proc.go:253
+
+1: 4864 [59: 286976] @ 0x954325 0x954311 0x953fc5 0x9507ca 0x95079e 0x955925 0x9eb37e 0x9ebb5f 0x47a541
+#	0x954324	github.com/confluentinc/confluent-kafka-go/v2/kafka._Cfunc_GoBytes+0x44				_cgo_gotypes.go:876
+#	0x954310	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC.func1+0x30	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x953fc4	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC+0xc4		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x9507c9	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).newMessageFromC+0x969		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:177
+#	0x95079d	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll+0x93d			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:230
+#	0x955924	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush+0x164			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:398
+#	0x9eb37d	video_server/kafka_client.(*kafkaClient).Publish+0x57d						/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:162
+#	0x9ebb5e	video_server/stream.(*stream).listenFrame+0x9e							/home/dbarun/CDPG/video_server/stream/stream.go:50
+
+1: 2048 [1: 2048] @ 0x446391 0x446ef5 0x4475d8 0x4478f0 0x44f8bd 0x44f565 0x445ad3 0x445a16 0x478485
+#	0x446390	runtime.allocm+0x90	/usr/local/go/src/runtime/proc.go:2108
+#	0x446ef4	runtime.newm+0x34	/usr/local/go/src/runtime/proc.go:2644
+#	0x4475d7	runtime.startm+0x157	/usr/local/go/src/runtime/proc.go:2870
+#	0x4478ef	runtime.handoffp+0x18f	/usr/local/go/src/runtime/proc.go:2928
+#	0x44f8bc	runtime.retake+0x23c	/usr/local/go/src/runtime/proc.go:6165
+#	0x44f564	runtime.sysmon+0x344	/usr/local/go/src/runtime/proc.go:6071
+#	0x445ad2	runtime.mstart1+0x92	/usr/local/go/src/runtime/proc.go:1729
+#	0x445a15	runtime.mstart0+0x75	/usr/local/go/src/runtime/proc.go:1686
+#	0x478484	runtime.mstart+0x4	/usr/local/go/src/runtime/asm_amd64.s:394
+
+1: 448 [1: 448] @ 0x44c2a5 0x44c4ef 0x44c43f 0x47858a
+#	0x44c2a4	runtime.malg+0x24		/usr/local/go/src/runtime/proc.go:4856
+#	0x44c4ee	runtime.newproc1+0x6e		/usr/local/go/src/runtime/proc.go:4901
+#	0x44c43e	runtime.newproc.func1+0x1e	/usr/local/go/src/runtime/proc.go:4878
+#	0x478589	runtime.systemstack+0x49	/usr/local/go/src/runtime/asm_amd64.s:509
+
+1: 144 [1: 144] @ 0x4166e8 0x747f1c 0x451328 0x442990 0x442880 0x47a541
+#	0x747f1b	github.com/aws/aws-sdk-go/aws/endpoints.init+0x2ec1b	/home/dbarun/go/pkg/mod/github.com/aws/aws-sdk-go@v1.54.18/aws/endpoints/defaults.go:14487
+#	0x451327	runtime.doInit1+0xe7					/usr/local/go/src/runtime/proc.go:7176
+#	0x44298f	runtime.doInit+0x34f					/usr/local/go/src/runtime/proc.go:7143
+#	0x44287f	runtime.main+0x23f					/usr/local/go/src/runtime/proc.go:253
+
+1: 96 [9: 864] @ 0x955825 0x9eb37e 0x9ebb5f 0x47a541
+#	0x955824	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush+0x64	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:370
+#	0x9eb37d	video_server/kafka_client.(*kafkaClient).Publish+0x57d				/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:162
+#	0x9ebb5e	video_server/stream.(*stream).listenFrame+0x9e					/home/dbarun/CDPG/video_server/stream/stream.go:50
+
+1: 32 [1: 32] @ 0x6ccaa5 0x6cc8b3 0x6ccd65 0x6d05da 0x6de630 0x6de62b 0x81c707 0x81c6ef 0x812a4b 0x451328 0x442990 0x442880 0x47a541
+#	0x6ccaa4	regexp/syntax.(*parser).maybeConcat+0xc4		/usr/local/go/src/regexp/syntax/parse.go:353
+#	0x6cc8b2	regexp/syntax.(*parser).push+0x252			/usr/local/go/src/regexp/syntax/parse.go:323
+#	0x6ccd64	regexp/syntax.(*parser).literal+0x124			/usr/local/go/src/regexp/syntax/parse.go:377
+#	0x6d05d9	regexp/syntax.parse+0xbd9				/usr/local/go/src/regexp/syntax/parse.go:932
+#	0x6de62f	regexp/syntax.Parse+0x2f				/usr/local/go/src/regexp/syntax/parse.go:889
+#	0x6de62a	regexp.compile+0x2a					/usr/local/go/src/regexp/regexp.go:172
+#	0x81c706	regexp.Compile+0x26					/usr/local/go/src/regexp/regexp.go:135
+#	0x81c6ee	github.com/aws/aws-sdk-go/aws/endpoints.init.func7+0xe	/home/dbarun/go/pkg/mod/github.com/aws/aws-sdk-go@v1.54.18/aws/endpoints/defaults.go:47603
+#	0x812a4a	github.com/aws/aws-sdk-go/aws/endpoints.init+0xf974a	/home/dbarun/go/pkg/mod/github.com/aws/aws-sdk-go@v1.54.18/aws/endpoints/defaults.go:47605
+#	0x451327	runtime.doInit1+0xe7					/usr/local/go/src/runtime/proc.go:7176
+#	0x44298f	runtime.doInit+0x34f					/usr/local/go/src/runtime/proc.go:7143
+#	0x44287f	runtime.main+0x23f					/usr/local/go/src/runtime/proc.go:253
+
+0: 0 [7: 66304] @ 0x954325 0x954311 0x953fc5 0x9507ca 0x95079e 0x955925 0x9eb37e 0x9ebb5f 0x47a541
+#	0x954324	github.com/confluentinc/confluent-kafka-go/v2/kafka._Cfunc_GoBytes+0x44				_cgo_gotypes.go:876
+#	0x954310	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC.func1+0x30	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x953fc4	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC+0xc4		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x9507c9	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).newMessageFromC+0x969		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:177
+#	0x95079d	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll+0x93d			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:230
+#	0x955924	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush+0x164			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:398
+#	0x9eb37d	video_server/kafka_client.(*kafkaClient).Publish+0x57d						/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:162
+#	0x9ebb5e	video_server/stream.(*stream).listenFrame+0x9e							/home/dbarun/CDPG/video_server/stream/stream.go:50
+
+0: 0 [6: 122880] @ 0x954325 0x954311 0x953fc5 0x9507ca 0x95079e 0x955925 0x9eb37e 0x9ebb5f 0x47a541
+#	0x954324	github.com/confluentinc/confluent-kafka-go/v2/kafka._Cfunc_GoBytes+0x44				_cgo_gotypes.go:876
+#	0x954310	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC.func1+0x30	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x953fc4	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC+0xc4		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x9507c9	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).newMessageFromC+0x969		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:177
+#	0x95079d	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll+0x93d			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:230
+#	0x955924	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush+0x164			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:398
+#	0x9eb37d	video_server/kafka_client.(*kafkaClient).Publish+0x57d						/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:162
+#	0x9ebb5e	video_server/stream.(*stream).listenFrame+0x9e							/home/dbarun/CDPG/video_server/stream/stream.go:50
+
+0: 0 [0: 0] @ 0x9eb30e 0x9ebb5f 0x47a541
+#	0x9eb30d	video_server/kafka_client.(*kafkaClient).Publish+0x50d	/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:161
+#	0x9ebb5e	video_server/stream.(*stream).listenFrame+0x9e		/home/dbarun/CDPG/video_server/stream/stream.go:50
+
+0: 0 [0: 0] @ 0x954325 0x954311 0x953fc5 0x9507ca 0x95079e 0x9570ad 0x956885 0x47a541
+#	0x954324	github.com/confluentinc/confluent-kafka-go/v2/kafka._Cfunc_GoBytes+0x44				_cgo_gotypes.go:876
+#	0x954310	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC.func1+0x30	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x953fc4	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC+0xc4		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x9507c9	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).newMessageFromC+0x969		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:177
+#	0x95079d	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll+0x93d			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:230
+#	0x9570ac	github.com/confluentinc/confluent-kafka-go/v2/kafka.poller+0x4c					/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:688
+#	0x956884	github.com/confluentinc/confluent-kafka-go/v2/kafka.NewProducer.func5+0x24			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:594
+
+0: 0 [1: 16] @ 0x9ea966 0x47a541
+#	0x9ea965	video_server/kafka_client.(*kafkaClient).msgReportHandler.func1+0x205	/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:95
+
+0: 0 [1: 16384] @ 0x4e0a9b 0x704633 0x7009fc 0x6fd1a5 0x47a541
+#	0x4e0a9a	os.ReadFile+0x1ba					/usr/local/go/src/os/file.go:803
+#	0x704632	runtime/pprof.(*profileBuilder).readMapping+0x32	/usr/local/go/src/runtime/pprof/proto_other.go:18
+#	0x7009fb	runtime/pprof.newProfileBuilder+0x1db			/usr/local/go/src/runtime/pprof/proto.go:270
+#	0x6fd1a4	runtime/pprof.profileWriter+0x24			/usr/local/go/src/runtime/pprof/pprof.go:846
+
+0: 0 [1: 10240] @ 0x954325 0x954311 0x953fc5 0x9507ca 0x95079e 0x9570ad 0x956885 0x47a541
+#	0x954324	github.com/confluentinc/confluent-kafka-go/v2/kafka._Cfunc_GoBytes+0x44				_cgo_gotypes.go:876
+#	0x954310	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC.func1+0x30	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x953fc4	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC+0xc4		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x9507c9	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).newMessageFromC+0x969		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:177
+#	0x95079d	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll+0x93d			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:230
+#	0x9570ac	github.com/confluentinc/confluent-kafka-go/v2/kafka.poller+0x4c					/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:688
+#	0x956884	github.com/confluentinc/confluent-kafka-go/v2/kafka.NewProducer.func5+0x24			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:594
+
+0: 0 [2: 16] @ 0x94ffb9 0x955925 0x9eb37e 0x9ebb5f 0x47a541
+#	0x94ffb8	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll+0x158	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:225
+#	0x955924	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush+0x164	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:398
+#	0x9eb37d	video_server/kafka_client.(*kafkaClient).Publish+0x57d				/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:162
+#	0x9ebb5e	video_server/stream.(*stream).listenFrame+0x9e					/home/dbarun/CDPG/video_server/stream/stream.go:50
+
+0: 0 [2: 64] @ 0x48fa4c 0x9eaf56 0x9ebb5f 0x47a541
+#	0x48fa4b	time.Time.Format+0xeb					/usr/local/go/src/time/format.go:631
+#	0x9eaf55	video_server/kafka_client.(*kafkaClient).Publish+0x155	/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:148
+#	0x9ebb5e	video_server/stream.(*stream).listenFrame+0x9e		/home/dbarun/CDPG/video_server/stream/stream.go:50
+
+0: 0 [1: 16] @ 0x954125 0x9507ca 0x95079e 0x955925 0x9eb37e 0x9ebb5f 0x47a541
+#	0x954124	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC+0x224	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:165
+#	0x9507c9	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).newMessageFromC+0x969	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:177
+#	0x95079d	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll+0x93d		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:230
+#	0x955924	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush+0x164		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:398
+#	0x9eb37d	video_server/kafka_client.(*kafkaClient).Publish+0x57d					/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:162
+#	0x9ebb5e	video_server/stream.(*stream).listenFrame+0x9e						/home/dbarun/CDPG/video_server/stream/stream.go:50
+
+0: 0 [1: 3072] @ 0x954325 0x954311 0x953fc5 0x9507ca 0x95079e 0x9570ad 0x956885 0x47a541
+#	0x954324	github.com/confluentinc/confluent-kafka-go/v2/kafka._Cfunc_GoBytes+0x44				_cgo_gotypes.go:876
+#	0x954310	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC.func1+0x30	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x953fc4	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC+0xc4		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x9507c9	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).newMessageFromC+0x969		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:177
+#	0x95079d	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll+0x93d			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:230
+#	0x9570ac	github.com/confluentinc/confluent-kafka-go/v2/kafka.poller+0x4c					/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:688
+#	0x956884	github.com/confluentinc/confluent-kafka-go/v2/kafka.NewProducer.func5+0x24			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:594
+
+0: 0 [2: 32] @ 0x953f34 0x9507ca 0x95079e 0x955925 0x9eb37e 0x9ebb5f 0x47a541
+#	0x953f33	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC+0x33	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:141
+#	0x9507c9	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).newMessageFromC+0x969	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:177
+#	0x95079d	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll+0x93d		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:230
+#	0x955924	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush+0x164		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:398
+#	0x9eb37d	video_server/kafka_client.(*kafkaClient).Publish+0x57d					/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:162
+#	0x9ebb5e	video_server/stream.(*stream).listenFrame+0x9e						/home/dbarun/CDPG/video_server/stream/stream.go:50
+
+0: 0 [2: 96] @ 0x954a77 0x955345 0x9eb1fb 0x9ebb5f 0x47a541
+#	0x954a76	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).produce+0x396	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:253
+#	0x955344	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Produce+0xa4	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:313
+#	0x9eb1fa	video_server/kafka_client.(*kafkaClient).Publish+0x3fa				/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:157
+#	0x9ebb5e	video_server/stream.(*stream).listenFrame+0x9e					/home/dbarun/CDPG/video_server/stream/stream.go:50
+
+0: 0 [2: 32] @ 0x45dd66 0x9eaf93 0x9ebb5f 0x47a541
+#	0x9eaf92	video_server/kafka_client.(*kafkaClient).Publish+0x192	/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:152
+#	0x9ebb5e	video_server/stream.(*stream).listenFrame+0x9e		/home/dbarun/CDPG/video_server/stream/stream.go:50
+
+0: 0 [1: 64] @ 0x4f5beb 0x4e8c97 0x6fabeb 0x6fa265 0x6fcd55 0x6fcae5 0x6f990b 0x709a2f 0x70a51e 0x6a5529 0x6a73ad 0x6a84ae 0x6a4168 0x47a541
+#	0x4f5bea	strings.(*Builder).Write+0x8a			/usr/local/go/src/strings/builder.go:91
+#	0x4e8c96	fmt.Fprintf+0x96				/usr/local/go/src/fmt/print.go:225
+#	0x6fabea	runtime/pprof.printCountProfile.func1+0xea	/usr/local/go/src/runtime/pprof/pprof.go:447
+#	0x6fa264	runtime/pprof.printCountProfile+0x204		/usr/local/go/src/runtime/pprof/pprof.go:460
+#	0x6fcd54	runtime/pprof.writeRuntimeProfile+0x154		/usr/local/go/src/runtime/pprof/pprof.go:782
+#	0x6fcae4	runtime/pprof.writeGoroutine+0x44		/usr/local/go/src/runtime/pprof/pprof.go:734
+#	0x6f990a	runtime/pprof.(*Profile).WriteTo+0x14a		/usr/local/go/src/runtime/pprof/pprof.go:369
+#	0x709a2e	net/http/pprof.handler.ServeHTTP+0x52e		/usr/local/go/src/net/http/pprof/pprof.go:267
+#	0x70a51d	net/http/pprof.Index+0xdd			/usr/local/go/src/net/http/pprof/pprof.go:384
+#	0x6a5528	net/http.HandlerFunc.ServeHTTP+0x28		/usr/local/go/src/net/http/server.go:2166
+#	0x6a73ac	net/http.(*ServeMux).ServeHTTP+0x1ac		/usr/local/go/src/net/http/server.go:2683
+#	0x6a84ad	net/http.serverHandler.ServeHTTP+0x8d		/usr/local/go/src/net/http/server.go:3137
+#	0x6a4167	net/http.(*conn).serve+0x5e7			/usr/local/go/src/net/http/server.go:2039
+
+0: 0 [2: 27136] @ 0x954325 0x954311 0x953fc5 0x9507ca 0x95079e 0x955925 0x9eb37e 0x9ebb5f 0x47a541
+#	0x954324	github.com/confluentinc/confluent-kafka-go/v2/kafka._Cfunc_GoBytes+0x44				_cgo_gotypes.go:876
+#	0x954310	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC.func1+0x30	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x953fc4	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC+0xc4		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x9507c9	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).newMessageFromC+0x969		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:177
+#	0x95079d	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll+0x93d			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:230
+#	0x955924	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush+0x164			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:398
+#	0x9eb37d	video_server/kafka_client.(*kafkaClient).Publish+0x57d						/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:162
+#	0x9ebb5e	video_server/stream.(*stream).listenFrame+0x9e							/home/dbarun/CDPG/video_server/stream/stream.go:50
+
+0: 0 [2: 32] @ 0x4e8d86 0x954665 0x4eb7df 0x4ec0e6 0x4efc98 0x4e9289 0x9ea9dc 0x9ea926 0x47a541
+#	0x4e8d85	fmt.Sprintf+0x65							/usr/local/go/src/fmt/print.go:240
+#	0x954664	github.com/confluentinc/confluent-kafka-go/v2/kafka.Offset.String+0xa4	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/offset.go:60
+#	0x4eb7de	fmt.(*pp).handleMethods+0x31e						/usr/local/go/src/fmt/print.go:673
+#	0x4ec0e5	fmt.(*pp).printArg+0x445						/usr/local/go/src/fmt/print.go:756
+#	0x4efc97	fmt.(*pp).doPrintln+0x37						/usr/local/go/src/fmt/print.go:1221
+#	0x4e9288	fmt.Fprintln+0x48							/usr/local/go/src/fmt/print.go:304
+#	0x9ea9db	fmt.Println+0x27b							/usr/local/go/src/fmt/print.go:314
+#	0x9ea925	video_server/kafka_client.(*kafkaClient).msgReportHandler.func1+0x1c5	/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:95
+
+0: 0 [6: 13824] @ 0x954325 0x954311 0x953fc5 0x9507ca 0x95079e 0x955925 0x9eb37e 0x9ebb5f 0x47a541
+#	0x954324	github.com/confluentinc/confluent-kafka-go/v2/kafka._Cfunc_GoBytes+0x44				_cgo_gotypes.go:876
+#	0x954310	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC.func1+0x30	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x953fc4	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC+0xc4		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x9507c9	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).newMessageFromC+0x969		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:177
+#	0x95079d	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll+0x93d			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:230
+#	0x955924	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush+0x164			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:398
+#	0x9eb37d	video_server/kafka_client.(*kafkaClient).Publish+0x57d						/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:162
+#	0x9ebb5e	video_server/stream.(*stream).listenFrame+0x9e							/home/dbarun/CDPG/video_server/stream/stream.go:50
+
+0: 0 [2: 256] @ 0x4f5beb 0x4e8c97 0x6fabeb 0x6fa265 0x6fcd55 0x6fcae5 0x6f990b 0x709a2f 0x70a51e 0x6a5529 0x6a73ad 0x6a84ae 0x6a4168 0x47a541
+#	0x4f5bea	strings.(*Builder).Write+0x8a			/usr/local/go/src/strings/builder.go:91
+#	0x4e8c96	fmt.Fprintf+0x96				/usr/local/go/src/fmt/print.go:225
+#	0x6fabea	runtime/pprof.printCountProfile.func1+0xea	/usr/local/go/src/runtime/pprof/pprof.go:447
+#	0x6fa264	runtime/pprof.printCountProfile+0x204		/usr/local/go/src/runtime/pprof/pprof.go:460
+#	0x6fcd54	runtime/pprof.writeRuntimeProfile+0x154		/usr/local/go/src/runtime/pprof/pprof.go:782
+#	0x6fcae4	runtime/pprof.writeGoroutine+0x44		/usr/local/go/src/runtime/pprof/pprof.go:734
+#	0x6f990a	runtime/pprof.(*Profile).WriteTo+0x14a		/usr/local/go/src/runtime/pprof/pprof.go:369
+#	0x709a2e	net/http/pprof.handler.ServeHTTP+0x52e		/usr/local/go/src/net/http/pprof/pprof.go:267
+#	0x70a51d	net/http/pprof.Index+0xdd			/usr/local/go/src/net/http/pprof/pprof.go:384
+#	0x6a5528	net/http.HandlerFunc.ServeHTTP+0x28		/usr/local/go/src/net/http/server.go:2166
+#	0x6a73ac	net/http.(*ServeMux).ServeHTTP+0x1ac		/usr/local/go/src/net/http/server.go:2683
+#	0x6a84ad	net/http.serverHandler.ServeHTTP+0x8d		/usr/local/go/src/net/http/server.go:3137
+#	0x6a4167	net/http.(*conn).serve+0x5e7			/usr/local/go/src/net/http/server.go:2039
+
+0: 0 [1: 24576] @ 0x954325 0x954311 0x953fc5 0x9507ca 0x95079e 0x955925 0x9eb37e 0x9ebb5f 0x47a541
+#	0x954324	github.com/confluentinc/confluent-kafka-go/v2/kafka._Cfunc_GoBytes+0x44				_cgo_gotypes.go:876
+#	0x954310	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC.func1+0x30	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x953fc4	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC+0xc4		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x9507c9	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).newMessageFromC+0x969		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:177
+#	0x95079d	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll+0x93d			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:230
+#	0x955924	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush+0x164			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:398
+#	0x9eb37d	video_server/kafka_client.(*kafkaClient).Publish+0x57d						/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:162
+#	0x9ebb5e	video_server/stream.(*stream).listenFrame+0x9e							/home/dbarun/CDPG/video_server/stream/stream.go:50
+
+0: 0 [9: 73728] @ 0x954325 0x954311 0x953fc5 0x9507ca 0x95079e 0x955925 0x9eb37e 0x9ebb5f 0x47a541
+#	0x954324	github.com/confluentinc/confluent-kafka-go/v2/kafka._Cfunc_GoBytes+0x44				_cgo_gotypes.go:876
+#	0x954310	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC.func1+0x30	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x953fc4	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC+0xc4		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x9507c9	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).newMessageFromC+0x969		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:177
+#	0x95079d	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll+0x93d			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:230
+#	0x955924	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush+0x164			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:398
+#	0x9eb37d	video_server/kafka_client.(*kafkaClient).Publish+0x57d						/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:162
+#	0x9ebb5e	video_server/stream.(*stream).listenFrame+0x9e							/home/dbarun/CDPG/video_server/stream/stream.go:50
+
+0: 0 [5: 61440] @ 0x954325 0x954311 0x953fc5 0x9507ca 0x95079e 0x955925 0x9eb37e 0x9ebb5f 0x47a541
+#	0x954324	github.com/confluentinc/confluent-kafka-go/v2/kafka._Cfunc_GoBytes+0x44				_cgo_gotypes.go:876
+#	0x954310	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC.func1+0x30	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x953fc4	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC+0xc4		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x9507c9	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).newMessageFromC+0x969		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:177
+#	0x95079d	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll+0x93d			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:230
+#	0x955924	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush+0x164			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:398
+#	0x9eb37d	video_server/kafka_client.(*kafkaClient).Publish+0x57d						/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:162
+#	0x9ebb5e	video_server/stream.(*stream).listenFrame+0x9e							/home/dbarun/CDPG/video_server/stream/stream.go:50
+
+0: 0 [8: 768] @ 0x955810 0x9eb37e 0x9ebb5f 0x47a541
+#	0x95580f	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush+0x4f	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:368
+#	0x9eb37d	video_server/kafka_client.(*kafkaClient).Publish+0x57d				/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:162
+#	0x9ebb5e	video_server/stream.(*stream).listenFrame+0x9e					/home/dbarun/CDPG/video_server/stream/stream.go:50
+
+0: 0 [1: 16] @ 0x49fa9b 0x4eb7df 0x4ec0e6 0x4efc98 0x4e9289 0x9eb369 0x9eb29d 0x9ebb5f 0x47a541
+#	0x49fa9a	time.Duration.String+0x5a				/usr/local/go/src/time/time.go:655
+#	0x4eb7de	fmt.(*pp).handleMethods+0x31e				/usr/local/go/src/fmt/print.go:673
+#	0x4ec0e5	fmt.(*pp).printArg+0x445				/usr/local/go/src/fmt/print.go:756
+#	0x4efc97	fmt.(*pp).doPrintln+0x37				/usr/local/go/src/fmt/print.go:1221
+#	0x4e9288	fmt.Fprintln+0x48					/usr/local/go/src/fmt/print.go:304
+#	0x9eb368	fmt.Println+0x568					/usr/local/go/src/fmt/print.go:314
+#	0x9eb29c	video_server/kafka_client.(*kafkaClient).Publish+0x49c	/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:161
+#	0x9ebb5e	video_server/stream.(*stream).listenFrame+0x9e		/home/dbarun/CDPG/video_server/stream/stream.go:50
+
+0: 0 [0: 0] @ 0x954325 0x954311 0x953fc5 0x9507ca 0x95079e 0x9570ad 0x956885 0x47a541
+#	0x954324	github.com/confluentinc/confluent-kafka-go/v2/kafka._Cfunc_GoBytes+0x44				_cgo_gotypes.go:876
+#	0x954310	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC.func1+0x30	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x953fc4	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC+0xc4		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x9507c9	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).newMessageFromC+0x969		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:177
+#	0x95079d	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll+0x93d			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:230
+#	0x9570ac	github.com/confluentinc/confluent-kafka-go/v2/kafka.poller+0x4c					/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:688
+#	0x956884	github.com/confluentinc/confluent-kafka-go/v2/kafka.NewProducer.func5+0x24			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:594
+
+0: 0 [1: 16] @ 0x4f5beb 0x4e8c97 0x6fab8c 0x6fa265 0x6fcd55 0x6fcae5 0x6f990b 0x709a2f 0x70a51e 0x6a5529 0x6a73ad 0x6a84ae 0x6a4168 0x47a541
+#	0x4f5bea	strings.(*Builder).Write+0x8a			/usr/local/go/src/strings/builder.go:91
+#	0x4e8c96	fmt.Fprintf+0x96				/usr/local/go/src/fmt/print.go:225
+#	0x6fab8b	runtime/pprof.printCountProfile.func1+0x8b	/usr/local/go/src/runtime/pprof/pprof.go:445
+#	0x6fa264	runtime/pprof.printCountProfile+0x204		/usr/local/go/src/runtime/pprof/pprof.go:460
+#	0x6fcd54	runtime/pprof.writeRuntimeProfile+0x154		/usr/local/go/src/runtime/pprof/pprof.go:782
+#	0x6fcae4	runtime/pprof.writeGoroutine+0x44		/usr/local/go/src/runtime/pprof/pprof.go:734
+#	0x6f990a	runtime/pprof.(*Profile).WriteTo+0x14a		/usr/local/go/src/runtime/pprof/pprof.go:369
+#	0x709a2e	net/http/pprof.handler.ServeHTTP+0x52e		/usr/local/go/src/net/http/pprof/pprof.go:267
+#	0x70a51d	net/http/pprof.Index+0xdd			/usr/local/go/src/net/http/pprof/pprof.go:384
+#	0x6a5528	net/http.HandlerFunc.ServeHTTP+0x28		/usr/local/go/src/net/http/server.go:2166
+#	0x6a73ac	net/http.(*ServeMux).ServeHTTP+0x1ac		/usr/local/go/src/net/http/server.go:2683
+#	0x6a84ad	net/http.serverHandler.ServeHTTP+0x8d		/usr/local/go/src/net/http/server.go:3137
+#	0x6a4167	net/http.(*conn).serve+0x5e7			/usr/local/go/src/net/http/server.go:2039
+
+0: 0 [0: 0] @ 0x954325 0x954311 0x953fc5 0x9507ca 0x95079e 0x955925 0x9eb37e 0x9ebb5f 0x47a541
+#	0x954324	github.com/confluentinc/confluent-kafka-go/v2/kafka._Cfunc_GoBytes+0x44				_cgo_gotypes.go:876
+#	0x954310	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC.func1+0x30	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x953fc4	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC+0xc4		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x9507c9	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).newMessageFromC+0x969		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:177
+#	0x95079d	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll+0x93d			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:230
+#	0x955924	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush+0x164			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:398
+#	0x9eb37d	video_server/kafka_client.(*kafkaClient).Publish+0x57d						/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:162
+#	0x9ebb5e	video_server/stream.(*stream).listenFrame+0x9e							/home/dbarun/CDPG/video_server/stream/stream.go:50
+
+0: 0 [3: 9600] @ 0x954325 0x954311 0x953fc5 0x9507ca 0x95079e 0x955925 0x9eb37e 0x9ebb5f 0x47a541
+#	0x954324	github.com/confluentinc/confluent-kafka-go/v2/kafka._Cfunc_GoBytes+0x44				_cgo_gotypes.go:876
+#	0x954310	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC.func1+0x30	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x953fc4	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC+0xc4		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x9507c9	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).newMessageFromC+0x969		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:177
+#	0x95079d	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll+0x93d			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:230
+#	0x955924	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush+0x164			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:398
+#	0x9eb37d	video_server/kafka_client.(*kafkaClient).Publish+0x57d						/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:162
+#	0x9ebb5e	video_server/stream.(*stream).listenFrame+0x9e							/home/dbarun/CDPG/video_server/stream/stream.go:50
+
+0: 0 [4: 26112] @ 0x954325 0x954311 0x953fc5 0x9507ca 0x95079e 0x955925 0x9eb37e 0x9ebb5f 0x47a541
+#	0x954324	github.com/confluentinc/confluent-kafka-go/v2/kafka._Cfunc_GoBytes+0x44				_cgo_gotypes.go:876
+#	0x954310	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC.func1+0x30	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x953fc4	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC+0xc4		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x9507c9	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).newMessageFromC+0x969		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:177
+#	0x95079d	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll+0x93d			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:230
+#	0x955924	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush+0x164			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:398
+#	0x9eb37d	video_server/kafka_client.(*kafkaClient).Publish+0x57d						/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:162
+#	0x9ebb5e	video_server/stream.(*stream).listenFrame+0x9e							/home/dbarun/CDPG/video_server/stream/stream.go:50
+
+0: 0 [2: 48] @ 0x955836 0x9eb37e 0x9ebb5f 0x47a541
+#	0x955835	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush+0x75	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:375
+#	0x9eb37d	video_server/kafka_client.(*kafkaClient).Publish+0x57d				/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:162
+#	0x9ebb5e	video_server/stream.(*stream).listenFrame+0x9e					/home/dbarun/CDPG/video_server/stream/stream.go:50
+
+0: 0 [35: 340480] @ 0x954325 0x954311 0x953fc5 0x9507ca 0x95079e 0x955925 0x9eb37e 0x9ebb5f 0x47a541
+#	0x954324	github.com/confluentinc/confluent-kafka-go/v2/kafka._Cfunc_GoBytes+0x44				_cgo_gotypes.go:876
+#	0x954310	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC.func1+0x30	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x953fc4	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC+0xc4		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x9507c9	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).newMessageFromC+0x969		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:177
+#	0x95079d	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll+0x93d			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:230
+#	0x955924	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush+0x164			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:398
+#	0x9eb37d	video_server/kafka_client.(*kafkaClient).Publish+0x57d						/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:162
+#	0x9ebb5e	video_server/stream.(*stream).listenFrame+0x9e							/home/dbarun/CDPG/video_server/stream/stream.go:50
+
+0: 0 [0: 0] @ 0x954325 0x954311 0x953fc5 0x9507ca 0x95079e 0x955925 0x9eb37e 0x9ebb5f 0x47a541
+#	0x954324	github.com/confluentinc/confluent-kafka-go/v2/kafka._Cfunc_GoBytes+0x44				_cgo_gotypes.go:876
+#	0x954310	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC.func1+0x30	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x953fc4	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC+0xc4		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x9507c9	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).newMessageFromC+0x969		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:177
+#	0x95079d	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll+0x93d			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:230
+#	0x955924	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush+0x164			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:398
+#	0x9eb37d	video_server/kafka_client.(*kafkaClient).Publish+0x57d						/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:162
+#	0x9ebb5e	video_server/stream.(*stream).listenFrame+0x9e							/home/dbarun/CDPG/video_server/stream/stream.go:50
+
+0: 0 [9: 147456] @ 0x954325 0x954311 0x953fc5 0x9507ca 0x95079e 0x955925 0x9eb37e 0x9ebb5f 0x47a541
+#	0x954324	github.com/confluentinc/confluent-kafka-go/v2/kafka._Cfunc_GoBytes+0x44				_cgo_gotypes.go:876
+#	0x954310	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC.func1+0x30	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x953fc4	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC+0xc4		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x9507c9	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).newMessageFromC+0x969		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:177
+#	0x95079d	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll+0x93d			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:230
+#	0x955924	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush+0x164			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:398
+#	0x9eb37d	video_server/kafka_client.(*kafkaClient).Publish+0x57d						/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:162
+#	0x9ebb5e	video_server/stream.(*stream).listenFrame+0x9e							/home/dbarun/CDPG/video_server/stream/stream.go:50
+
+0: 0 [1: 1024] @ 0x8276ec 0x827657 0x827577 0x8257bc 0x825298 0x922ffa 0x9eb83a 0x47a541
+#	0x8276eb	os/exec.dedupEnvCase+0x4b				/usr/local/go/src/os/exec/exec.go:1227
+#	0x827656	os/exec.dedupEnv+0x156					/usr/local/go/src/os/exec/exec.go:1217
+#	0x827576	os/exec.(*Cmd).environ+0x76				/usr/local/go/src/os/exec/exec.go:1196
+#	0x8257bb	os/exec.(*Cmd).Start+0x4db				/usr/local/go/src/os/exec/exec.go:695
+#	0x825297	os/exec.(*Cmd).Run+0x17					/usr/local/go/src/os/exec/exec.go:604
+#	0x922ff9	github.com/u2takey/ffmpeg-go.(*Stream).Run+0xf9		/home/dbarun/go/pkg/mod/github.com/u2takey/ffmpeg-go@v0.5.0/run.go:288
+#	0x9eb839	video_server/stream.(*stream).HandleRTSPStream+0x239	/home/dbarun/CDPG/video_server/stream/stream.go:101
+
+0: 0 [1: 512] @ 0x4d4e92 0x9ec593 0x6a5529 0x6a73ad 0x6a84ae 0x6a4168 0x47a541
+#	0x4d4e91	io.ReadAll+0x31				/usr/local/go/src/io/io.go:710
+#	0x9ec592	main.main.func2+0x1b2			/home/dbarun/CDPG/video_server/main.go:77
+#	0x6a5528	net/http.HandlerFunc.ServeHTTP+0x28	/usr/local/go/src/net/http/server.go:2166
+#	0x6a73ac	net/http.(*ServeMux).ServeHTTP+0x1ac	/usr/local/go/src/net/http/server.go:2683
+#	0x6a84ad	net/http.serverHandler.ServeHTTP+0x8d	/usr/local/go/src/net/http/server.go:3137
+#	0x6a4167	net/http.(*conn).serve+0x5e7		/usr/local/go/src/net/http/server.go:2039
+
+0: 0 [1: 224] @ 0x6a022b 0x6a3eb9 0x47a541
+#	0x6a022a	net/http.(*conn).readRequest+0x8aa	/usr/local/go/src/net/http/server.go:1052
+#	0x6a3eb8	net/http.(*conn).serve+0x338		/usr/local/go/src/net/http/server.go:1964
+
+0: 0 [26: 266240] @ 0x954325 0x954311 0x953fc5 0x9507ca 0x95079e 0x955925 0x9eb37e 0x9ebb5f 0x47a541
+#	0x954324	github.com/confluentinc/confluent-kafka-go/v2/kafka._Cfunc_GoBytes+0x44				_cgo_gotypes.go:876
+#	0x954310	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC.func1+0x30	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x953fc4	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC+0xc4		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x9507c9	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).newMessageFromC+0x969		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:177
+#	0x95079d	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll+0x93d			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:230
+#	0x955924	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush+0x164			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:398
+#	0x9eb37d	video_server/kafka_client.(*kafkaClient).Publish+0x57d						/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:162
+#	0x9ebb5e	video_server/stream.(*stream).listenFrame+0x9e							/home/dbarun/CDPG/video_server/stream/stream.go:50
+
+0: 0 [0: 0] @ 0x954325 0x954311 0x953fc5 0x9507ca 0x95079e 0x9570ad 0x956885 0x47a541
+#	0x954324	github.com/confluentinc/confluent-kafka-go/v2/kafka._Cfunc_GoBytes+0x44				_cgo_gotypes.go:876
+#	0x954310	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC.func1+0x30	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x953fc4	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC+0xc4		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x9507c9	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).newMessageFromC+0x969		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:177
+#	0x95079d	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll+0x93d			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:230
+#	0x9570ac	github.com/confluentinc/confluent-kafka-go/v2/kafka.poller+0x4c					/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:688
+#	0x956884	github.com/confluentinc/confluent-kafka-go/v2/kafka.NewProducer.func5+0x24			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:594
+
+0: 0 [4: 320] @ 0x9eb049 0x9ebb5f 0x47a541
+#	0x9eb048	video_server/kafka_client.(*kafkaClient).Publish+0x248	/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:145
+#	0x9ebb5e	video_server/stream.(*stream).listenFrame+0x9e		/home/dbarun/CDPG/video_server/stream/stream.go:50
+
+0: 0 [36: 221184] @ 0x954325 0x954311 0x953fc5 0x9507ca 0x95079e 0x955925 0x9eb37e 0x9ebb5f 0x47a541
+#	0x954324	github.com/confluentinc/confluent-kafka-go/v2/kafka._Cfunc_GoBytes+0x44				_cgo_gotypes.go:876
+#	0x954310	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC.func1+0x30	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x953fc4	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC+0xc4		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x9507c9	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).newMessageFromC+0x969		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:177
+#	0x95079d	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll+0x93d			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:230
+#	0x955924	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush+0x164			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:398
+#	0x9eb37d	video_server/kafka_client.(*kafkaClient).Publish+0x57d						/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:162
+#	0x9ebb5e	video_server/stream.(*stream).listenFrame+0x9e							/home/dbarun/CDPG/video_server/stream/stream.go:50
+
+0: 0 [13: 2496] @ 0x9507aa 0x95079e 0x955925 0x9eb37e 0x9ebb5f 0x47a541
+#	0x9507a9	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).newMessageFromC+0x949	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:175
+#	0x95079d	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll+0x93d		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:230
+#	0x955924	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush+0x164		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:398
+#	0x9eb37d	video_server/kafka_client.(*kafkaClient).Publish+0x57d					/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:162
+#	0x9ebb5e	video_server/stream.(*stream).listenFrame+0x9e						/home/dbarun/CDPG/video_server/stream/stream.go:50
+
+0: 0 [2: 32] @ 0x9eae59 0x9ebb5f 0x47a541
+#	0x9eae58	video_server/kafka_client.(*kafkaClient).Publish+0x58	/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:133
+#	0x9ebb5e	video_server/stream.(*stream).listenFrame+0x9e		/home/dbarun/CDPG/video_server/stream/stream.go:50
+
+0: 0 [0: 0] @ 0x954325 0x954311 0x953fc5 0x9507ca 0x95079e 0x9570ad 0x956885 0x47a541
+#	0x954324	github.com/confluentinc/confluent-kafka-go/v2/kafka._Cfunc_GoBytes+0x44				_cgo_gotypes.go:876
+#	0x954310	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC.func1+0x30	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x953fc4	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC+0xc4		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x9507c9	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).newMessageFromC+0x969		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:177
+#	0x95079d	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll+0x93d			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:230
+#	0x9570ac	github.com/confluentinc/confluent-kafka-go/v2/kafka.poller+0x4c					/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:688
+#	0x956884	github.com/confluentinc/confluent-kafka-go/v2/kafka.NewProducer.func5+0x24			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:594
+
+0: 0 [1: 144] @ 0x5cc265 0x5cc0e6 0x6976a8 0x69fbc8 0x6a3eb9 0x47a541
+#	0x5cc264	net/url.parse+0xc4			/usr/local/go/src/net/url/url.go:517
+#	0x5cc0e5	net/url.ParseRequestURI+0x25		/usr/local/go/src/net/url/url.go:495
+#	0x6976a7	net/http.readRequest+0x307		/usr/local/go/src/net/http/request.go:1095
+#	0x69fbc7	net/http.(*conn).readRequest+0x247	/usr/local/go/src/net/http/server.go:1004
+#	0x6a3eb8	net/http.(*conn).serve+0x338		/usr/local/go/src/net/http/server.go:1964
+
+0: 0 [0: 0] @ 0x954325 0x954311 0x953fc5 0x9507ca 0x95079e 0x955925 0x9eb37e 0x9ebb5f 0x47a541
+#	0x954324	github.com/confluentinc/confluent-kafka-go/v2/kafka._Cfunc_GoBytes+0x44				_cgo_gotypes.go:876
+#	0x954310	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC.func1+0x30	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x953fc4	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC+0xc4		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x9507c9	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).newMessageFromC+0x969		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:177
+#	0x95079d	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll+0x93d			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:230
+#	0x955924	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush+0x164			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:398
+#	0x9eb37d	video_server/kafka_client.(*kafkaClient).Publish+0x57d						/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:162
+#	0x9ebb5e	video_server/stream.(*stream).listenFrame+0x9e							/home/dbarun/CDPG/video_server/stream/stream.go:50
+
+0: 0 [2: 8192] @ 0x48786f 0x487bba 0x4defb2 0x4def7d 0x4debd4 0x8258d1 0x825298 0x922ffa 0x9eb83a 0x47a541
+#	0x48786e	syscall.SlicePtrFromStrings+0xee			/usr/local/go/src/syscall/exec_unix.go:93
+#	0x487bb9	syscall.forkExec+0x119					/usr/local/go/src/syscall/exec_unix.go:166
+#	0x4defb1	syscall.StartProcess+0x311				/usr/local/go/src/syscall/exec_unix.go:254
+#	0x4def7c	os.startProcess+0x2dc					/usr/local/go/src/os/exec_posix.go:54
+#	0x4debd3	os.StartProcess+0x53					/usr/local/go/src/os/exec.go:111
+#	0x8258d0	os/exec.(*Cmd).Start+0x5f0				/usr/local/go/src/os/exec/exec.go:700
+#	0x825297	os/exec.(*Cmd).Run+0x17					/usr/local/go/src/os/exec/exec.go:604
+#	0x922ff9	github.com/u2takey/ffmpeg-go.(*Stream).Run+0xf9		/home/dbarun/go/pkg/mod/github.com/u2takey/ffmpeg-go@v0.5.0/run.go:288
+#	0x9eb839	video_server/stream.(*stream).HandleRTSPStream+0x239	/home/dbarun/CDPG/video_server/stream/stream.go:101
+
+0: 0 [4: 128] @ 0x45dd66 0x9eaf65 0x9ebb5f 0x47a541
+#	0x9eaf64	video_server/kafka_client.(*kafkaClient).Publish+0x164	/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:148
+#	0x9ebb5e	video_server/stream.(*stream).listenFrame+0x9e		/home/dbarun/CDPG/video_server/stream/stream.go:50
+
+0: 0 [35: 1680] @ 0x94ff1b 0x955925 0x9eb37e 0x9ebb5f 0x47a541
+#	0x94ff1a	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll+0xba	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:166
+#	0x955924	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush+0x164	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:398
+#	0x9eb37d	video_server/kafka_client.(*kafkaClient).Publish+0x57d				/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:162
+#	0x9ebb5e	video_server/stream.(*stream).listenFrame+0x9e					/home/dbarun/CDPG/video_server/stream/stream.go:50
+
+0: 0 [1: 1024] @ 0x6f72be 0x6f7253 0x4e8c97 0x6fb3b2 0x6fa9b2 0x6fcd55 0x6fcae5 0x6f990b 0x709a2f 0x70a51e 0x6a5529 0x6a73ad 0x6a84ae 0x6a4168 0x47a541
+#	0x6f72bd	text/tabwriter.(*Writer).append+0x17d	/usr/local/go/src/text/tabwriter/tabwriter.go:410
+#	0x6f7252	text/tabwriter.(*Writer).Write+0x112	/usr/local/go/src/text/tabwriter/tabwriter.go:533
+#	0x4e8c96	fmt.Fprintf+0x96			/usr/local/go/src/fmt/print.go:225
+#	0x6fb3b1	runtime/pprof.printStackRecord+0x351	/usr/local/go/src/runtime/pprof/pprof.go:541
+#	0x6fa9b1	runtime/pprof.printCountProfile+0x951	/usr/local/go/src/runtime/pprof/pprof.go:476
+#	0x6fcd54	runtime/pprof.writeRuntimeProfile+0x154	/usr/local/go/src/runtime/pprof/pprof.go:782
+#	0x6fcae4	runtime/pprof.writeGoroutine+0x44	/usr/local/go/src/runtime/pprof/pprof.go:734
+#	0x6f990a	runtime/pprof.(*Profile).WriteTo+0x14a	/usr/local/go/src/runtime/pprof/pprof.go:369
+#	0x709a2e	net/http/pprof.handler.ServeHTTP+0x52e	/usr/local/go/src/net/http/pprof/pprof.go:267
+#	0x70a51d	net/http/pprof.Index+0xdd		/usr/local/go/src/net/http/pprof/pprof.go:384
+#	0x6a5528	net/http.HandlerFunc.ServeHTTP+0x28	/usr/local/go/src/net/http/server.go:2166
+#	0x6a73ac	net/http.(*ServeMux).ServeHTTP+0x1ac	/usr/local/go/src/net/http/server.go:2683
+#	0x6a84ad	net/http.serverHandler.ServeHTTP+0x8d	/usr/local/go/src/net/http/server.go:3137
+#	0x6a4167	net/http.(*conn).serve+0x5e7		/usr/local/go/src/net/http/server.go:2039
+
+0: 0 [44: 135168] @ 0x954325 0x954311 0x953fc5 0x9507ca 0x95079e 0x955925 0x9eb37e 0x9ebb5f 0x47a541
+#	0x954324	github.com/confluentinc/confluent-kafka-go/v2/kafka._Cfunc_GoBytes+0x44				_cgo_gotypes.go:876
+#	0x954310	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC.func1+0x30	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x953fc4	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC+0xc4		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x9507c9	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).newMessageFromC+0x969		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:177
+#	0x95079d	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll+0x93d			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:230
+#	0x955924	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush+0x164			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:398
+#	0x9eb37d	video_server/kafka_client.(*kafkaClient).Publish+0x57d						/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:162
+#	0x9ebb5e	video_server/stream.(*stream).listenFrame+0x9e							/home/dbarun/CDPG/video_server/stream/stream.go:50
+
+0: 0 [59: 317184] @ 0x954325 0x954311 0x953fc5 0x9507ca 0x95079e 0x955925 0x9eb37e 0x9ebb5f 0x47a541
+#	0x954324	github.com/confluentinc/confluent-kafka-go/v2/kafka._Cfunc_GoBytes+0x44				_cgo_gotypes.go:876
+#	0x954310	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC.func1+0x30	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x953fc4	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC+0xc4		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x9507c9	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).newMessageFromC+0x969		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:177
+#	0x95079d	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll+0x93d			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:230
+#	0x955924	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush+0x164			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:398
+#	0x9eb37d	video_server/kafka_client.(*kafkaClient).Publish+0x57d						/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:162
+#	0x9ebb5e	video_server/stream.(*stream).listenFrame+0x9e							/home/dbarun/CDPG/video_server/stream/stream.go:50
+
+0: 0 [10: 26880] @ 0x954325 0x954311 0x953fc5 0x9507ca 0x95079e 0x955925 0x9eb37e 0x9ebb5f 0x47a541
+#	0x954324	github.com/confluentinc/confluent-kafka-go/v2/kafka._Cfunc_GoBytes+0x44				_cgo_gotypes.go:876
+#	0x954310	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC.func1+0x30	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x953fc4	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC+0xc4		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x9507c9	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).newMessageFromC+0x969		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:177
+#	0x95079d	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll+0x93d			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:230
+#	0x955924	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush+0x164			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:398
+#	0x9eb37d	video_server/kafka_client.(*kafkaClient).Publish+0x57d						/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:162
+#	0x9ebb5e	video_server/stream.(*stream).listenFrame+0x9e							/home/dbarun/CDPG/video_server/stream/stream.go:50
+
+0: 0 [1: 2048] @ 0x954325 0x954311 0x953fc5 0x9507ca 0x95079e 0x9570ad 0x956885 0x47a541
+#	0x954324	github.com/confluentinc/confluent-kafka-go/v2/kafka._Cfunc_GoBytes+0x44				_cgo_gotypes.go:876
+#	0x954310	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC.func1+0x30	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x953fc4	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC+0xc4		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x9507c9	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).newMessageFromC+0x969		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:177
+#	0x95079d	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll+0x93d			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:230
+#	0x9570ac	github.com/confluentinc/confluent-kafka-go/v2/kafka.poller+0x4c					/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:688
+#	0x956884	github.com/confluentinc/confluent-kafka-go/v2/kafka.NewProducer.func5+0x24			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:594
+
+0: 0 [1: 1024] @ 0x485854 0x82753c 0x827537 0x8257bc 0x825298 0x922ffa 0x9eb83a 0x47a541
+#	0x485853	syscall.Environ+0xd3					/usr/local/go/src/syscall/env_unix.go:143
+#	0x82753b	internal/syscall/execenv.Default+0x3b			/usr/local/go/src/internal/syscall/execenv/execenv_default.go:18
+#	0x827536	os/exec.(*Cmd).environ+0x36				/usr/local/go/src/os/exec/exec.go:1167
+#	0x8257bb	os/exec.(*Cmd).Start+0x4db				/usr/local/go/src/os/exec/exec.go:695
+#	0x825297	os/exec.(*Cmd).Run+0x17					/usr/local/go/src/os/exec/exec.go:604
+#	0x922ff9	github.com/u2takey/ffmpeg-go.(*Stream).Run+0xf9		/home/dbarun/go/pkg/mod/github.com/u2takey/ffmpeg-go@v0.5.0/run.go:288
+#	0x9eb839	video_server/stream.(*stream).HandleRTSPStream+0x239	/home/dbarun/CDPG/video_server/stream/stream.go:101
+
+0: 0 [0: 0] @ 0x954325 0x954311 0x953fc5 0x9507ca 0x95079e 0x9570ad 0x956885 0x47a541
+#	0x954324	github.com/confluentinc/confluent-kafka-go/v2/kafka._Cfunc_GoBytes+0x44				_cgo_gotypes.go:876
+#	0x954310	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC.func1+0x30	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x953fc4	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC+0xc4		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x9507c9	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).newMessageFromC+0x969		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:177
+#	0x95079d	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll+0x93d			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:230
+#	0x9570ac	github.com/confluentinc/confluent-kafka-go/v2/kafka.poller+0x4c					/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:688
+#	0x956884	github.com/confluentinc/confluent-kafka-go/v2/kafka.NewProducer.func5+0x24			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:594
+
+0: 0 [1: 4096] @ 0x69e9f8 0x69e9a0 0x69eab4 0x6a3dfe 0x47a541
+#	0x69e9f7	bufio.NewReaderSize+0x217	/usr/local/go/src/bufio/bufio.go:54
+#	0x69e99f	bufio.NewReader+0x1bf		/usr/local/go/src/bufio/bufio.go:60
+#	0x69eab3	net/http.newBufioReader+0x2d3	/usr/local/go/src/net/http/server.go:841
+#	0x6a3dfd	net/http.(*conn).serve+0x27d	/usr/local/go/src/net/http/server.go:1960
+
+0: 0 [0: 0] @ 0x954325 0x954311 0x953fc5 0x9507ca 0x95079e 0x9570ad 0x956885 0x47a541
+#	0x954324	github.com/confluentinc/confluent-kafka-go/v2/kafka._Cfunc_GoBytes+0x44				_cgo_gotypes.go:876
+#	0x954310	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC.func1+0x30	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x953fc4	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC+0xc4		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x9507c9	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).newMessageFromC+0x969		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:177
+#	0x95079d	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll+0x93d			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:230
+#	0x9570ac	github.com/confluentinc/confluent-kafka-go/v2/kafka.poller+0x4c					/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:688
+#	0x956884	github.com/confluentinc/confluent-kafka-go/v2/kafka.NewProducer.func5+0x24			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:594
+
+0: 0 [0: 0] @ 0x954325 0x954311 0x953fc5 0x9507ca 0x95079e 0x955925 0x9eb37e 0x9ebb5f 0x47a541
+#	0x954324	github.com/confluentinc/confluent-kafka-go/v2/kafka._Cfunc_GoBytes+0x44				_cgo_gotypes.go:876
+#	0x954310	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC.func1+0x30	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x953fc4	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC+0xc4		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x9507c9	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).newMessageFromC+0x969		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:177
+#	0x95079d	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll+0x93d			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:230
+#	0x955924	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush+0x164			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:398
+#	0x9eb37d	video_server/kafka_client.(*kafkaClient).Publish+0x57d						/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:162
+#	0x9ebb5e	video_server/stream.(*stream).listenFrame+0x9e							/home/dbarun/CDPG/video_server/stream/stream.go:50
+
+0: 0 [1: 80] @ 0x6cbc1b 0x6cbbc6 0x6cb21f 0x6caf85 0x6c9b0d 0x6de677 0x6df1cc 0x6df1c0 0x8a85e5 0x451328 0x442990 0x442880 0x47a541
+#	0x6cbc1a	regexp/syntax.(*compiler).inst+0x9a		/usr/local/go/src/regexp/syntax/compile.go:164
+#	0x6cbbc5	regexp/syntax.(*compiler).rune+0x45		/usr/local/go/src/regexp/syntax/compile.go:273
+#	0x6cb21e	regexp/syntax.(*compiler).compile+0x157e	/usr/local/go/src/regexp/syntax/compile.go:101
+#	0x6caf84	regexp/syntax.(*compiler).compile+0x12e4	/usr/local/go/src/regexp/syntax/compile.go:145
+#	0x6c9b0c	regexp/syntax.Compile+0x14c			/usr/local/go/src/regexp/syntax/compile.go:74
+#	0x6de676	regexp.compile+0x76				/usr/local/go/src/regexp/regexp.go:180
+#	0x6df1cb	regexp.Compile+0x2b				/usr/local/go/src/regexp/regexp.go:135
+#	0x6df1bf	regexp.MustCompile+0x1f				/usr/local/go/src/regexp/regexp.go:315
+#	0x8a85e4	github.com/aws/aws-sdk-go/service/s3.init+0x24	/home/dbarun/go/pkg/mod/github.com/aws/aws-sdk-go@v1.54.18/service/s3/bucket_location.go:13
+#	0x451327	runtime.doInit1+0xe7				/usr/local/go/src/runtime/proc.go:7176
+#	0x44298f	runtime.doInit+0x34f				/usr/local/go/src/runtime/proc.go:7143
+#	0x44287f	runtime.main+0x23f				/usr/local/go/src/runtime/proc.go:253
+
+0: 0 [0: 0] @ 0x954325 0x954311 0x953fc5 0x9507ca 0x95079e 0x9570ad 0x956885 0x47a541
+#	0x954324	github.com/confluentinc/confluent-kafka-go/v2/kafka._Cfunc_GoBytes+0x44				_cgo_gotypes.go:876
+#	0x954310	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC.func1+0x30	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x953fc4	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC+0xc4		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x9507c9	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).newMessageFromC+0x969		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:177
+#	0x95079d	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll+0x93d			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:230
+#	0x9570ac	github.com/confluentinc/confluent-kafka-go/v2/kafka.poller+0x4c					/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:688
+#	0x956884	github.com/confluentinc/confluent-kafka-go/v2/kafka.NewProducer.func5+0x24			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:594
+
+0: 0 [0: 0] @ 0x954325 0x954311 0x953fc5 0x9507ca 0x95079e 0x9570ad 0x956885 0x47a541
+#	0x954324	github.com/confluentinc/confluent-kafka-go/v2/kafka._Cfunc_GoBytes+0x44				_cgo_gotypes.go:876
+#	0x954310	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC.func1+0x30	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x953fc4	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC+0xc4		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x9507c9	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).newMessageFromC+0x969		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:177
+#	0x95079d	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll+0x93d			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:230
+#	0x9570ac	github.com/confluentinc/confluent-kafka-go/v2/kafka.poller+0x4c					/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:688
+#	0x956884	github.com/confluentinc/confluent-kafka-go/v2/kafka.NewProducer.func5+0x24			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:594
+
+0: 0 [0: 0] @ 0x954325 0x954311 0x953fc5 0x9507ca 0x95079e 0x955925 0x9eb37e 0x9ebb5f 0x47a541
+#	0x954324	github.com/confluentinc/confluent-kafka-go/v2/kafka._Cfunc_GoBytes+0x44				_cgo_gotypes.go:876
+#	0x954310	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC.func1+0x30	/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x953fc4	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).setupMessageFromC+0xc4		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:146
+#	0x9507c9	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).newMessageFromC+0x969		/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/message.go:177
+#	0x95079d	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*handle).eventPoll+0x93d			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/event.go:230
+#	0x955924	github.com/confluentinc/confluent-kafka-go/v2/kafka.(*Producer).Flush+0x164			/home/dbarun/go/pkg/mod/github.com/confluentinc/confluent-kafka-go/v2@v2.5.0/kafka/producer.go:398
+#	0x9eb37d	video_server/kafka_client.(*kafkaClient).Publish+0x57d						/home/dbarun/CDPG/video_server/kafka_client/kafka_client.go:162
+#	0x9ebb5e	video_server/stream.(*stream).listenFrame+0x9e							/home/dbarun/CDPG/video_server/stream/stream.go:50
+
+
+# runtime.MemStats
+# Alloc = 47376144
+# TotalAlloc = 301408992
+# Sys = 95772952
+# Lookups = 0
+# Mallocs = 1616836
+# Frees = 1546440
+# HeapAlloc = 47376144
+# HeapSys = 72220672
+# HeapIdle = 19259392
+# HeapInuse = 52961280
+# HeapReleased = 1597440
+# HeapObjects = 70396
+# Stack = 15859712 / 15859712
+# MSpan = 425280 / 620160
+# MCache = 14400 / 15600
+# BuckHashSys = 1465113
+# GCSys = 3352648
+# OtherSys = 2239047
+# NextGC = 70000880
+# LastGC = 1721248232150058226
+# PauseNs = [18183 82481 116094 1460761 4902688 11790012 2678362 4782145 27906949 19416599 12757381 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+# PauseEnd = [1721247814032586769 1721247917746066984 1721247938168998505 1721247952905030527 1721247973874647995 1721248003759430073 1721248040555855590 1721248079455926667 1721248108618828571 1721248139507070916 1721248232150058226 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+# NumGC = 11
+# NumForcedGC = 0
+# GCCPUFraction = 0.0009497141658924332
+# DebugGC = false
+# MaxRSS = 177971200

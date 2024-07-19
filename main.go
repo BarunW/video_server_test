@@ -10,7 +10,7 @@ import (
 	"os"
 	"os/signal"
 	"runtime"
-	"strconv"
+	"strings"
 	"video_server/configs"
 	kafkaclient "video_server/kafka_client"
 	"video_server/models"
@@ -24,7 +24,7 @@ func main(){
  //"rtsp://localhost:8554/webcam"
     fmt.Println("Hello World")
     fmt.Println("CPU Number", runtime.NumCPU())
-    runtime.GOMAXPROCS(4)
+    runtime.GOMAXPROCS(runtime.NumCPU())
 
     kfC, err := kafkaclient.NewKafkaClient(kafka.ConfigMap{ "bootstrap.servers": "localhost:9092" } )    
     if err != nil{
@@ -52,15 +52,27 @@ func main(){
     parentContext, cancel := context.WithCancel(context.Background())
     camera := models.Camera{
        Name: "webcam", 
-       ConnectionURL: "rtsp://localhost:8554/webcam",
+       ConnectionURL: "rtsp://localhost:8554/webcam", //"rtsp://192.168.43.135:8554/webcam",
     }
     
     serveMux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
         w.WriteHeader(http.StatusOK)
         w.Write([]byte("Hello World"))
     })
+    var m runtime.MemStats
+    runtime.ReadMemStats(&m)
+    basline := m.Alloc
+    fmt.Printf("Baseline memory usage: %d bytes", basline)
 
-    serveMux.HandleFunc("/camera/register", func(w http.ResponseWriter, r *http.Request) {
+
+    serveMux.HandleFunc("/camera/register/*", func(w http.ResponseWriter, r *http.Request) { 
+        paths := strings.Split(r.URL.String(), "/")
+        l := len(paths) - 1  
+        fmt.Println("Cam Name",paths[l])
+        if paths[l] == "" || paths[l] == " "{ 
+            w.WriteHeader(http.StatusUnauthorized)
+            return
+        }
 
         bdy, err := io.ReadAll(r.Body)
         if err != nil{
@@ -71,8 +83,8 @@ func main(){
         defer r.Body.Close()
         fmt.Println("Req Body", string(bdy))
 
-        // update the camera name
-        camera.Name += strconv.Itoa(counter)
+        // connect the rtsp stream a
+        camera.Name = paths[l] 
         go strm.HandleRTSPStream(parentContext, 
                 configs.NewFFMPEG_RTSPStreamConfig(camera.ConnectionURL), camera) 
 
@@ -80,12 +92,14 @@ func main(){
 
         w.WriteHeader(http.StatusOK)
         w.Write([]byte("Hello, World!"))
+
         return
     })
     
     sigChan := make(chan os.Signal, 0)
     signal.Notify(sigChan, os.Interrupt)
     signal.Notify(sigChan, os.Kill)
+    
 
     go func(){
         if err := server.ListenAndServe(); err != nil{
@@ -93,7 +107,12 @@ func main(){
             return 
         }
     }()
+
     <-sigChan
+    runtime.ReadMemStats(&m)
+    withGoroutine := m.Alloc
+    fmt.Printf("Memory usage With  goRoutine: %d bytes", withGoroutine)
+
     cancel()
     kfC.Close()
 
