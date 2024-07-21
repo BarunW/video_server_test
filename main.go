@@ -11,6 +11,7 @@ import (
 	"os/signal"
 	"runtime"
 	"strings"
+	"sync"
 	"video_server/configs"
 	kafkaclient "video_server/kafka_client"
 	"video_server/models"
@@ -19,12 +20,16 @@ import (
 	"github.com/confluentinc/confluent-kafka-go/v2/kafka"
 )
 
-
 func main(){
  //"rtsp://localhost:8554/webcam"
     fmt.Println("Hello World")
     fmt.Println("CPU Number", runtime.NumCPU())
     runtime.GOMAXPROCS(runtime.NumCPU())
+
+    //ballast
+    _= make([]byte, 10<<30) 
+
+    var wg sync.WaitGroup
 
     kfC, err := kafkaclient.NewKafkaClient(kafka.ConfigMap{ "bootstrap.servers": "localhost:9092" } )    
     if err != nil{
@@ -33,7 +38,7 @@ func main(){
     }  
     
     // streaming
-    strm := stream.NewStream(kfC, kafkaclient.SerializeToFlatBuffers)
+    strm := stream.NewStream(kfC, &wg, kafkaclient.SerializeToFlatBuffers)
 
     serveMux := http.NewServeMux()
 
@@ -47,13 +52,8 @@ func main(){
     serveMux.HandleFunc("/debug/pprof/symbol", http.HandlerFunc(pprof.Symbol))
     serveMux.HandleFunc("/debug/pprof/trace", http.HandlerFunc(pprof.Trace))
 
-    counter := 0
 
     parentContext, cancel := context.WithCancel(context.Background())
-    camera := models.Camera{
-       Name: "webcam", 
-       ConnectionURL: "rtsp://localhost:8554/webcam", //"rtsp://192.168.43.135:8554/webcam",
-    }
     
     serveMux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
         w.WriteHeader(http.StatusOK)
@@ -62,13 +62,17 @@ func main(){
     var m runtime.MemStats
     runtime.ReadMemStats(&m)
     basline := m.Alloc
-    fmt.Printf("Baseline memory usage: %d bytes", basline)
+    fmt.Printf("Baseline memory usage: %d bytes\n", basline)
 
 
     serveMux.HandleFunc("/camera/register/*", func(w http.ResponseWriter, r *http.Request) { 
-        paths := strings.Split(r.URL.String(), "/")
-        l := len(paths) - 1  
-        fmt.Println("Cam Name",paths[l])
+        paths := strings.SplitN(r.URL.String(), "/",4)
+        l := len(paths) - 1 
+
+        
+        cameraDetails := strings.Split(paths[l], "?")
+        url := strings.Split(cameraDetails[len(cameraDetails)-1], "=")
+
         if paths[l] == "" || paths[l] == " "{ 
             w.WriteHeader(http.StatusUnauthorized)
             return
@@ -84,11 +88,14 @@ func main(){
         fmt.Println("Req Body", string(bdy))
 
         // connect the rtsp stream a
-        camera.Name = paths[l] 
+        camera := models.Camera{
+            Name: cameraDetails[0],
+            ConnectionURL: url[len(url)-1],
+        }
+
+        wg.Add(1)
         go strm.HandleRTSPStream(parentContext, 
                 configs.NewFFMPEG_RTSPStreamConfig(camera.ConnectionURL), camera) 
-
-        counter++
 
         w.WriteHeader(http.StatusOK)
         w.Write([]byte("Hello, World!"))
@@ -112,11 +119,12 @@ func main(){
     runtime.ReadMemStats(&m)
     withGoroutine := m.Alloc
     fmt.Printf("Memory usage With  goRoutine: %d bytes", withGoroutine)
-
+    
+    // Handle gracefull shutdown
     cancel()
     kfC.Close()
+    wg.Wait()
 
-    // Handle gracefull shutdown
 
 }
 

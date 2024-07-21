@@ -97,7 +97,10 @@ func (ka *kafkaClient) msgReportHandler() {
 				}
 			}
 		}
+        fmt.Println("Message Handler Done [[[[]]]]]")
+        return
 	}()
+    
 }
 func (ka *kafkaClient) CreateTopic(topic string, tS ...kf.TopicSpecification) error {
 	if tS == nil {
@@ -131,11 +134,24 @@ func(ka *kafkaClient) Close(){
     ka.producer.Close()
 }
 
-func (ka *kafkaClient) Publish(topic string, data interface{}, serializeFunc func(i interface{}) ([]byte, error)) {
+func (ka *kafkaClient) Publish(topic string, data interface{}, 
+            serializeFunc func(i interface{}) ([]byte, error)) error {
     var dataByt []byte
-    if serializeFunc != nil{ dataByt, _ = serializeFunc(data) }
-
-    dataByt = data.([]byte)
+    if serializeFunc != nil{ 
+        var err error
+        dataByt, err = serializeFunc(data) 
+        if err != nil{  
+            slog.Error("Failed to serializeFunc and data is not matching", "Details", err.Error())
+            return err
+        }
+    } else {
+        var ok bool
+        dataByt , ok = data.([]byte)
+        if !ok{
+          slog.Error("The data should be type []byte")  
+          return fmt.Errorf("The data should be type []byte")
+        }
+    }
 
 	now := time.Now()
     msg := kf.Message{
@@ -145,7 +161,8 @@ func (ka *kafkaClient) Publish(topic string, data interface{}, serializeFunc fun
             Headers: []kf.Header{
                 {
                     Key: "timeStamp",
-                    Value: []byte(time.Now().Format("2006-01-02 15:04:05.000")),
+                    // let the consumer parse the time 
+                    Value: []byte{byte(now.Local().Nanosecond())},
                 },
                 {
                     Key: "cameraName",
@@ -156,10 +173,14 @@ func (ka *kafkaClient) Publish(topic string, data interface{}, serializeFunc fun
 	err := ka.producer.Produce(&msg, nil)
 	if err != nil {
 		slog.Error("KAFKA Failed to publish message", "Details", err.Error())
-        return 
+        return err
 	}
 	fmt.Println("KAFKA", topic, time.Since(now))
+
+    // this flush is for the message doesn't buffer in the kafka queue
+    // making sure the message is sent
     ka.producer.Flush(1000)
+    return nil
 }
 
 func deserializeProtoBuf(byt []byte) (*protos.FrameData, error) {

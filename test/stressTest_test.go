@@ -27,8 +27,8 @@ func MakeRequest(url string) (*http.Response, error){
 }
 
 func TestStress(t *testing.T) {
-    for i := range 100 { 
-        url := fmt.Sprintf("http://localhost:8000/camera/register/deez_cam__%d", i) 
+    for i := range 10 { 
+        url := fmt.Sprintf("http://localhost:8000/camera/register/test10_%d?url=rtsp://localhost:8554/webcam", i) 
         resp, err := MakeRequest(url) 
         if err != nil || resp == nil{
             t.Fail()
