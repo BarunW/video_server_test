@@ -20,11 +20,16 @@ func NewFFMPEG_RTSPStreamConfig(connURL string) FFMPEG_RstpStreamConfig{
             "vcodec": "mjpeg", 
             // frame per second
             "r": "5", 
-            // quality of frame 80% less
-            "q": "50",
+            
+            // max 31
+            "q": "20",
     }
+
     fc.OutputFileName = "pipe:1"
-    fc.InputConfig = ffmpeg_go.KwArgs{} 
+    fc.InputConfig = ffmpeg_go.KwArgs{
+        "hwaccel" : "qsv",
+        "c:v" : "h264_qsv",
+    } 
 
     return fc
 }
