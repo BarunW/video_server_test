@@ -67,7 +67,6 @@ func SerializeToFlatBuffers(i interface{}) ([]byte, error) {
 
 	builder.Finish(fd)
 	return builder.FinishedBytes(), nil
-
 }
 
 func NewKafkaClient(configMap kf.ConfigMap) (*kafkaClient, error) {
@@ -100,10 +99,10 @@ func NewKafkaClient(configMap kf.ConfigMap) (*kafkaClient, error) {
 	return k, nil
 }
 
-
 var ProducerRecords = [][]string{
 	{"topic", "offsets", "sent_at", "size"},
 }
+
 func WriteToCsv() error {
 	f, err := os.Create("producerRecord_onTopic.csv")
 	if err != nil {
@@ -179,17 +178,15 @@ func (ka *kafkaClient) msgReportHandler() {
 		fmt.Println("Message Handler Done [[[[]]]]]")
 		return
 	}()
-
 }
 
-
 func (ka *kafkaClient) PublishOnParition(topic string, dataByt []byte, partition int32, camId int) error {
-    
-	fmt.Println("Message Received")
+
+    fmt.Println("Message Received")
 	now := time.Now()
 	ts := strconv.Itoa(int(now.UnixNano()))
     
-    	id  := "CAM-ID "+ strconv.Itoa(camId)
+    id  := "CAM-ID "+ strconv.Itoa(camId)
 	msg := kf.Message{
 		TopicPartition: kf.TopicPartition{Topic: &topic, Partition: partition},
 		Value:          dataByt,
@@ -232,7 +229,6 @@ func (ka *kafkaClient) AssignTopicAndPartition(topic string) (int32, error) {
 			},
 		}	
     
-
 	ctx, _ := context.WithCancel(context.Background())
 	result, err := ka.adminClient.CreateTopics(ctx, tS)
 	if err != nil {
@@ -285,7 +281,6 @@ func (ka *kafkaClient) AssignTopicAndPartition2(topic string, noOfPartition int,
 	}
 	return ka.partitionNo, nil 
 }
-
 
 
 func (ka *kafkaClient) CreateTopic(topic string, tS ...kf.TopicSpecification) error {
@@ -430,6 +425,7 @@ func (ka *kafkaClient) ack(cons *kf.Consumer) {
 	}
 	fmt.Printf("%+v", partitions)
 }
+
 func handleWriter(fd *protos.FrameData, counter int) {
 	fOpenTime := time.Now()
 	f, err := os.OpenFile("theoutput.png"+strconv.Itoa(counter), os.O_CREATE|os.O_WRONLY, os.ModePerm)

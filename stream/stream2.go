@@ -39,7 +39,6 @@ var (
 
 	defer close(eoiChan)
 
-
 // - published by grouping on partition or topic     
 // - Assingning topic and partition 
     n, err := s.publisher.AssignTopicAndPartition2(cam.Name, 10, 3)

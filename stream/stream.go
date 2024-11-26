@@ -20,6 +20,7 @@ type CustomWriter struct {
     //packetChan  chan []byte
     ctx         context.Context
     eoiIndex    int
+    soiIndex    int 
 }
 
 type stream struct {
@@ -33,7 +34,6 @@ type publisher interface {
     PublishOnParition(topic string, dataByt []byte, partition int32, camId int) error
     AssignTopicAndPartition(topic string) (int32, error)
     AssignTopicAndPartition2(topic string, noOfPartition int, noOfpubPerPart int) (int32, error)
-
 }
 
 func NewStream(pub publisher, serializeFunc func(i interface{}) ([]byte, error)) *stream {
@@ -89,17 +89,20 @@ func(cw *CustomWriter) listenToEoi(topic string, pub publisher, serializeFunc fu
 //var counter int = 0
 func(cw *CustomWriter) listenToEoi2(topic string, pub publisher, partitionNo int32, camId int){
     for frame := range cw.eoiChan{
-//	fName := fmt.Sprintf("packet%d", counter)	
-//   	f, err := os.Create(fName)  
-//	if err != nil{
-//		slog.Error("Failed to create File")
-//	}
-//	defer f.Close()
-//	if _, err := f.Write(frame); err != nil{
-//		slog.Error("Failed to write to the file", "Details", err.Error())
-//	}
-//	counter++ 
-	
+/* 
+    // To check the frame data for completeness
+
+	fName := fmt.Sprintf("packet%d", counter)	
+   	f, err := os.Create(fName)  
+	if err != nil{
+		slog.Error("Failed to create File")
+	}
+	defer f.Close()
+	if _, err := f.Write(frame); err != nil{
+		slog.Error("Failed to write to the file", "Details", err.Error())
+	}
+	counter++ 
+*/	
         err := pub.PublishOnParition(topic, frame, partitionNo, camId) 
         if err != nil{
             slog.Error("Failed to published", "Details", err.Error())
@@ -111,16 +114,16 @@ func(cw *CustomWriter) listenToEoi2(topic string, pub publisher, partitionNo int
 
 func (s *stream) HandleRTSPStreamForPublishOnPartition(ctx context.Context, parentWg *sync.WaitGroup,
 	config configs.FFMPEG_RstpStreamConfig, cam models.Camera) {
-var ( 
-        wg sync.WaitGroup
-	eoiChan = make(chan []byte, 64)	
-    ) 
+        var ( 
+            wg sync.WaitGroup
+            eoiChan = make(chan []byte, 64)	
+        ) 
 
-	writer := &CustomWriter{
-		buffer:     make([]byte, 0),
-        eoiChan: eoiChan,
-        ctx: ctx,
-	}
+        writer := &CustomWriter{
+            buffer:     make([]byte, 0),
+            eoiChan: eoiChan,
+            ctx: ctx,
+        }
 
 	defer close(eoiChan)
 
@@ -135,7 +138,6 @@ var (
 
     go writer.listenToEoi2(cam.Name, s.publisher, n, misc.NewCamId()) 
     
-
 	ffmpegStream := ffmpeg_go.Input(config.ConnURL, config.InputConfig).
 		Output(
 			config.OutputFileName,
